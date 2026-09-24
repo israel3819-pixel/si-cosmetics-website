@@ -1,0 +1,605 @@
+/* Ingredient checker restored from the existing landing page. */
+#checker { scroll-margin-top: 105px; }
+.checker-caveat { max-width: 72ch; margin-top: 12px; color: var(--concrete); font-size: 15px; }
+@media (max-width: 620px) { #checker { scroll-margin-top: 88px; } }
+
+    .checker-box {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: clamp(24px, 4.5vw, 42px);
+      margin-top: 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      position: relative;
+    }
+    .checker-grid {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      gap: 16px;
+      align-items: end;
+    }
+    .checker-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .checker-label {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--bronze);
+      font-weight: 600;
+      text-transform: uppercase;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .checker-select {
+      width: 100%;
+      background: #FAF8F5;
+      border: 1.5px solid rgba(28, 27, 26, 0.2);
+      border-radius: 3px;
+      color: var(--ink);
+      font-family: var(--he);
+      font-size: 16px;
+      font-weight: 600;
+      padding: 13px 16px;
+      cursor: pointer;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%233B3A38' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: left 14px center;
+    }
+    .checker-select:focus {
+      border-color: var(--bronze);
+      box-shadow: 0 0 0 3px rgba(169, 123, 82, 0.18);
+    }
+    .checker-divider-icon {
+      width: 44px;
+      height: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--mono);
+      font-size: 20px;
+      color: var(--bronze);
+      font-weight: 700;
+      user-select: none;
+      transition: transform 0.3s ease;
+    }
+    .is-connected .checker-divider-icon {
+      transform: scale(1.15);
+      color: #D9A441;
+      text-shadow: 0 0 10px rgba(217, 164, 65, 0.5);
+    }
+    .checker-bond-container {
+      grid-column: 1 / -1;
+      height: 20px;
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      transform: scaleX(0.85);
+      transition: opacity 0.4s ease, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      margin-top: -8px;
+      pointer-events: none;
+    }
+    .is-connected .checker-bond-container {
+      opacity: 1;
+      transform: scaleX(1);
+    }
+    .checker-bond-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .checker-bond-track {
+      stroke: rgba(169, 123, 82, 0.22);
+      stroke-width: 1.75;
+      stroke-dasharray: 4 4;
+    }
+    .checker-bond-pulse {
+      stroke: var(--bronze);
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-dasharray: 40 460;
+      stroke-dashoffset: 500;
+      animation: bondBeamTravel 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .checker-bond-orb {
+      fill: #D9A441;
+      filter: drop-shadow(0 0 6px rgba(217, 164, 65, 0.9));
+      animation: bondOrbTravel 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite alternate;
+    }
+    @keyframes bondBeamTravel {
+      0% { stroke-dashoffset: 500; }
+      100% { stroke-dashoffset: -500; }
+    }
+    @keyframes bondOrbTravel {
+      0% { cx: 40px; r: 3.5; opacity: 0.6; }
+      50% { r: 5; opacity: 1; }
+      100% { cx: 460px; r: 3.5; opacity: 0.6; }
+    }
+    .checker-chips-section {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding-top: 6px;
+    }
+    .checker-chips-title {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      color: var(--concrete);
+      text-transform: uppercase;
+      font-weight: 500;
+    }
+    .checker-chips-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .checker-chip {
+      background: var(--sand);
+      border: 1px solid rgba(28, 27, 26, 0.16);
+      border-radius: 20px;
+      padding: 7px 14px;
+      font-family: var(--he);
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--ink);
+      cursor: pointer;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      user-select: none;
+    }
+    .checker-chip:hover {
+      background: #E4D7C7;
+      border-color: var(--bronze);
+      transform: translateY(-1px);
+    }
+    .checker-chip.is-active {
+      background: var(--ink);
+      color: var(--sand);
+      border-color: var(--ink);
+      box-shadow: 0 2px 8px rgba(28, 27, 26, 0.2);
+    }
+    .checker-reset-btn {
+      background: transparent;
+      border: none;
+      color: var(--concrete);
+      font-family: var(--mono);
+      font-size: 11.5px;
+      letter-spacing: 0.08em;
+      cursor: pointer;
+      text-decoration: underline;
+      padding: 4px 6px;
+      transition: color 0.2s;
+    }
+    .checker-reset-btn:hover {
+      color: #991B1B;
+    }
+
+    .checker-result-area {
+      border-top: 1px solid var(--rule);
+      padding-top: 24px;
+      transition: all 0.3s ease;
+    }
+    .checker-card {
+      border-radius: 4px;
+      padding: 26px 28px;
+      border: 1.5px solid transparent;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      animation: checkerCardFadeIn 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      will-change: opacity, transform;
+    }
+    @keyframes checkerCardFadeIn {
+      from { opacity: 0; transform: translateY(12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Clinical Scanning State */
+    .checker-card.scanning {
+      background: var(--cream);
+      border: 1px solid var(--rule);
+      padding: 38px 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 12px;
+    }
+    .checker-scan-tag {
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      color: var(--bronze);
+      font-weight: 600;
+      animation: pulse 1.4s ease-in-out infinite;
+      will-change: opacity;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 1; }
+    }
+    .checker-scan-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--ink);
+      margin: 0;
+    }
+    .checker-scan-ticker {
+      font-family: var(--mono);
+      font-size: 12.5px;
+      letter-spacing: 0.08em;
+      color: var(--ink);
+      font-weight: 700;
+      padding: 6px 16px;
+      background: rgba(169, 123, 82, 0.1);
+      border-radius: 3px;
+      border: 1px dashed rgba(169, 123, 82, 0.35);
+      margin-top: 4px;
+      min-height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      direction: ltr;
+    }
+    .checker-scan-sub {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      color: var(--concrete);
+      letter-spacing: 0.12em;
+    }
+    .checker-scan-track {
+      width: 100%;
+      max-width: 280px;
+      height: 3px;
+      background: rgba(28, 27, 26, 0.12);
+      position: relative;
+      overflow: hidden;
+      margin-top: 6px;
+      border-radius: 2px;
+    }
+    .checker-scan-bar {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 45%;
+      background: linear-gradient(90deg, transparent, var(--bronze), transparent);
+      animation: scan 0.9s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+      will-change: transform;
+    }
+    @keyframes scan {
+      0% { transform: translateX(-150%); }
+      100% { transform: translateX(350%); }
+    }
+
+    /* Clinical Status Gauge & Score Bar */
+    .clinical-gauge-wrap {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .clinical-gauge-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      color: var(--concrete);
+    }
+    .clinical-gauge-track {
+      width: 100%;
+      height: 8px;
+      background: rgba(28, 27, 26, 0.08);
+      border-radius: 4px;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 3px;
+      padding: 1px;
+    }
+    .clinical-gauge-seg {
+      height: 100%;
+      border-radius: 2px;
+      opacity: 0.22;
+      transition: all 0.4s ease;
+    }
+    .clinical-gauge-seg.seg-safe { background: #1E5E28; }
+    .clinical-gauge-seg.seg-caution { background: #D9A441; }
+    .clinical-gauge-seg.seg-danger { background: #DC2626; }
+
+    .checker-card.safe .seg-safe {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(30, 94, 40, 0.7);
+    }
+    .checker-card.caution .seg-caution {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(217, 164, 65, 0.7);
+    }
+    .checker-card.danger .seg-danger {
+      opacity: 1;
+      box-shadow: 0 0 10px rgba(220, 38, 38, 0.8);
+    }
+
+    /* Animated Clinical Status Banner */
+    .checker-status-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 13px 18px;
+      border-radius: 4px;
+      font-size: 14.5px;
+      font-weight: 700;
+      position: relative;
+      overflow: hidden;
+    }
+    .checker-status-title {
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    /* Danger: Intense red alert wave */
+    .checker-card.danger .checker-status-banner {
+      background: linear-gradient(90deg, #991B1B 0%, #DC2626 50%, #991B1B 100%);
+      background-size: 200% 100%;
+      color: #FFFFFF;
+      animation: dangerAlertWave 2s ease-in-out infinite;
+      box-shadow: 0 4px 16px rgba(220, 38, 38, 0.3);
+    }
+    @keyframes dangerAlertWave {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Caution: Amber rhythmic scanner */
+    .checker-card.caution .checker-status-banner {
+      background: #FFFBEB;
+      color: #92400E;
+      border: 1px solid #D9A441;
+      box-shadow: 0 2px 10px rgba(217, 164, 65, 0.15);
+      position: relative;
+    }
+    .checker-card.caution .checker-status-banner::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 0;
+      width: 60px;
+      background: linear-gradient(90deg, transparent, rgba(217, 164, 65, 0.45), transparent);
+      animation: cautionRhythmicScan 2s linear infinite;
+      pointer-events: none;
+    }
+    @keyframes cautionRhythmicScan {
+      0% { transform: translateX(-60px); }
+      100% { transform: translateX(650px); }
+    }
+
+    /* Safe: Forest green clinical lock & sync pulse */
+    .checker-card.safe .checker-status-banner {
+      background: #F0FDF4;
+      color: #166534;
+      border: 1px solid #1E5E28;
+      box-shadow: 0 2px 10px rgba(30, 94, 40, 0.14);
+      animation: safeSyncPulse 3s ease-in-out infinite;
+    }
+    @keyframes safeSyncPulse {
+      0%, 100% {
+        box-shadow: 0 2px 10px rgba(30, 94, 40, 0.14);
+        border-color: #1E5E28;
+      }
+      50% {
+        box-shadow: 0 0 16px rgba(30, 94, 40, 0.35);
+        border-color: #2E8B57;
+      }
+    }
+    .clinical-lock-badge {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: #1E5E28;
+      color: #FFF;
+      font-size: 11px;
+      box-shadow: 0 0 8px rgba(30, 94, 40, 0.5);
+      animation: lockPulse 2.5s ease-in-out infinite;
+    }
+    @keyframes lockPulse {
+      0%, 100% { transform: scale(1); box-shadow: 0 0 6px rgba(30, 94, 40, 0.4); }
+      50% { transform: scale(1.08); box-shadow: 0 0 12px rgba(30, 94, 40, 0.7); }
+    }
+
+    .checker-card-title {
+      font-size: 21px;
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0;
+    }
+    .checker-card-desc {
+      font-size: 15.5px;
+      line-height: 1.7;
+      max-width: 68ch;
+      color: var(--ink);
+    }
+    .checker-protocol-rule {
+      padding: 13px 18px;
+      border-radius: 4px;
+      font-size: 14.5px;
+      font-weight: 700;
+      line-height: 1.5;
+    }
+
+    /* Danger / Contra-indication */
+    .checker-card.danger {
+      background: rgba(220, 38, 38, 0.05);
+      border-color: rgba(220, 38, 38, 0.4);
+      color: #7F1D1D;
+    }
+    .checker-card.danger .checker-badge {
+      background: rgba(220, 38, 38, 0.12);
+      color: #991B1B;
+    }
+    .checker-card.danger .checker-badge-dot {
+      background: #DC2626;
+      box-shadow: 0 0 8px #DC2626;
+    }
+    .checker-card.danger .checker-card-title {
+      color: #991B1B;
+    }
+    .checker-card.danger .checker-protocol-rule {
+      background: rgba(220, 38, 38, 0.1);
+      color: #991B1B;
+      border: 1px solid rgba(220, 38, 38, 0.25);
+    }
+
+    /* Caution / Separation */
+    .checker-card.caution {
+      background: rgba(217, 164, 65, 0.08);
+      border-color: rgba(217, 164, 65, 0.45);
+      color: #5C3F00;
+    }
+    .checker-card.caution .checker-badge {
+      background: rgba(217, 164, 65, 0.22);
+      color: #7C5308;
+    }
+    .checker-card.caution .checker-badge-dot {
+      background: #D9A441;
+      box-shadow: 0 0 8px #D9A441;
+    }
+    .checker-card.caution .checker-card-title {
+      color: #7C5308;
+    }
+    .checker-card.caution .checker-protocol-rule {
+      background: rgba(217, 164, 65, 0.14);
+      color: #684803;
+      border: 1px solid rgba(217, 164, 65, 0.35);
+    }
+
+    /* Safe / Synergy */
+    .checker-card.safe {
+      background: var(--green-bg);
+      border-color: rgba(30, 94, 40, 0.35);
+      color: var(--green-dark);
+    }
+    .checker-card.safe .checker-badge {
+      background: rgba(30, 94, 40, 0.15);
+      color: var(--green-dark);
+    }
+    .checker-card.safe .checker-badge-dot {
+      background: var(--green-dark);
+      box-shadow: 0 0 8px rgba(30, 94, 40, 0.6);
+    }
+    .checker-card.safe .checker-card-title {
+      color: var(--green-dark);
+    }
+    .checker-card.safe .checker-protocol-rule {
+      background: rgba(30, 94, 40, 0.1);
+      color: var(--green-dark);
+      border: 1px solid rgba(30, 94, 40, 0.25);
+    }
+
+    /* Unknown / Neutral / Verify Before Mixing */
+    .checker-card.unknown {
+      background: #F8F5F0;
+      border-color: rgba(169, 123, 82, 0.45);
+      color: var(--ink);
+    }
+    .checker-card.unknown .checker-status-banner {
+      background: #EDE6DC;
+      color: var(--ink);
+      border: 1px solid rgba(169, 123, 82, 0.4);
+      box-shadow: 0 2px 8px rgba(28, 27, 26, 0.06);
+    }
+    .checker-card.unknown .checker-card-title {
+      color: var(--ink);
+    }
+    .checker-card.unknown .checker-protocol-rule {
+      background: rgba(169, 123, 82, 0.1);
+      color: var(--ink);
+      border: 1px solid rgba(169, 123, 82, 0.28);
+    }
+
+    /* Empty state */
+    .checker-card.empty {
+      background: rgba(28, 27, 26, 0.02);
+      border: 1.5px dashed rgba(28, 27, 26, 0.22);
+      color: var(--concrete);
+      text-align: center;
+      padding: 36px 20px;
+      align-items: center;
+    }
+
+    /* Conversion CTA box */
+    .checker-cta-box {
+      margin-top: 14px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(28, 27, 26, 0.12);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .checker-cta-text {
+      font-size: 14.5px;
+      color: var(--ink);
+      line-height: 1.5;
+    }
+    .checker-cta-text strong {
+      display: block;
+      font-size: 16px;
+      margin-bottom: 2px;
+      color: var(--ink);
+    }
+    .checker-wa-btn {
+      padding: 12px 26px;
+      font-size: 15px;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 768px) {
+      .checker-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+      .checker-divider-icon {
+        width: 100%;
+        height: 20px;
+        transform: rotate(90deg);
+      }
+      .checker-card {
+        padding: 20px 18px;
+      }
+      .checker-card-title {
+        font-size: 19px;
+      }
+      .checker-cta-box {
+        flex-direction: column;
+        align-items: stretch;
+      }
+      .checker-wa-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .checker-scan-tag { animation: none !important; opacity: 1 !important; }
+      .checker-scan-bar { animation: none !important; }
+      .checker-card { animation: none !important; opacity: 1 !important; transform: none !important; }
+    }
+

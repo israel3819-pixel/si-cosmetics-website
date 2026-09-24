@@ -1,0 +1,18 @@
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+
+# Raw uncompressed video recordings in root (>100MB)
+/*.mp4
+
+# Allow web-optimized video assets
+!assets/*.mp4
+
+# Caches and temp files
+.cache/
+tmp/
+*.tmp
+node_modules/
