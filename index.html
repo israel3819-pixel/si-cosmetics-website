@@ -802,6 +802,89 @@
         grid-template-columns: 1fr;
       }
     }
+
+    .about-trust {
+      margin-top: clamp(36px, 4.5vw, 56px);
+      padding-top: clamp(28px, 3.5vw, 44px);
+      border-top: 1px solid var(--rule);
+    }
+
+    .about-trust-header {
+      margin-bottom: 24px;
+    }
+
+    .about-trust-header .eyebrow {
+      margin-bottom: 8px;
+      color: var(--bronze);
+    }
+
+    .about-trust-h3 {
+      font-size: clamp(20px, 2.4vw, 26px);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--ink);
+      margin-bottom: 8px;
+    }
+
+    .about-trust-intro {
+      color: var(--concrete);
+      font-size: 16px;
+      line-height: 1.6;
+      max-width: 58ch;
+    }
+
+    .about-trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .about-trust-item {
+      border-top: 1px solid var(--rule);
+      padding-top: 16px;
+    }
+
+    .about-trust-num {
+      display: block;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: 0.14em;
+      color: var(--bronze);
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .about-trust-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--ink);
+      margin-bottom: 6px;
+      line-height: 1.35;
+    }
+
+    .about-trust-desc {
+      font-size: 15px;
+      line-height: 1.6;
+      color: var(--concrete);
+      margin: 0;
+      max-width: 40ch;
+    }
+
+    .about-trust-cert-link {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 13.5px;
+      color: var(--bronze);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    @media(max-width: 680px) {
+      .about-trust-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+    }
   </style>
   <link rel="canonical" href="https://si-cosmetics-tlv.netlify.app/">
   <link rel="stylesheet" href="premium.css">
@@ -1209,6 +1292,30 @@
               <p>בהיתי בה, ולא שכחתי.</p>
             </div>
           </details>
+        </div>
+      </div>
+
+      <div class="about-trust">
+        <div class="about-trust-header">
+          <div class="eyebrow" lang="en" dir="ltr">PROFESSIONAL BACKGROUND</div>
+          <h3 class="about-trust-h3">המקצוע מאחורי הגישה.</h3>
+          <p class="about-trust-intro">מאחורי הגישה האישית יש גם בסיס מקצועי.</p>
+        </div>
+        <div class="about-trust-grid">
+          <article class="about-trust-item">
+            <span class="mono about-trust-num">01</span>
+            <h4 class="about-trust-title">הכשרה מקצועית</h4>
+            <p class="about-trust-desc">בוגר לימודי קוסמטיקה אצל חוה זינגבוים, בהצטיינות.</p>
+          </article>
+          <article class="about-trust-item">
+            <span class="mono about-trust-num">02</span>
+            <h4 class="about-trust-title">ניסיון מקצועי</h4>
+            <p class="about-trust-desc">כ־4 שנות ניסיון בעבודה בקליניקה, לפני הקמת S.I COSMETICS.</p>
+          </article>
+          <article class="about-trust-item">
+            <h4 class="about-trust-title">S.I COSMETICS</h4>
+            <p class="about-trust-desc">קליניקה עצמאית לטיפוח גברי בפלורנטין, תל אביב.</p>
+          </article>
         </div>
       </div>
     </section>
