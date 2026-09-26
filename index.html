@@ -835,8 +835,9 @@
 
     .about-trust-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
+      grid-template-columns: repeat(2, 1fr);
+      gap: clamp(24px, 3.5vw, 48px);
+      max-width: 840px;
     }
 
     .about-trust-item {
@@ -867,7 +868,7 @@
       line-height: 1.6;
       color: var(--concrete);
       margin: 0;
-      max-width: 40ch;
+      max-width: 44ch;
     }
 
     .about-trust-cert-link {
@@ -1311,10 +1312,6 @@
             <span class="mono about-trust-num">02</span>
             <h4 class="about-trust-title">ניסיון מקצועי</h4>
             <p class="about-trust-desc">כ־4 שנות ניסיון בעבודה בקליניקה, לפני הקמת S.I COSMETICS.</p>
-          </article>
-          <article class="about-trust-item">
-            <h4 class="about-trust-title">S.I COSMETICS</h4>
-            <p class="about-trust-desc">קליניקה עצמאית לטיפוח גברי בפלורנטין, תל אביב.</p>
           </article>
         </div>
       </div>
