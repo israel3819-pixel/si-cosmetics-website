@@ -291,6 +291,7 @@ body:not(.ready) .x-wa{opacity:0;transform:translateY(10px)}
   .x-ch .x-panel,.x-room .x-panel{margin:0}
   .x-ch::before,.x-hero::before,.x-room::before{background:linear-gradient(to top,rgba(14,11,9,.92) 30%,rgba(14,11,9,.4) 65%,transparent 85%)}
   .x-bens{grid-template-columns:1fr}
+  .x-room::before{background:linear-gradient(to top,rgba(14,11,9,.94) 45%,rgba(14,11,9,.55) 80%,transparent)}
   .x-match,.x-about,.x-trust{grid-template-columns:1fr}
   .x-clinic{grid-template-columns:1fr}
   .x-final{padding-top:52vh}
@@ -301,60 +302,6 @@ body:not(.ready) .x-wa{opacity:0;transform:translateY(10px)}
   .x-intro{display:none}
   .x-split .w > span,.x-rise,.js .x-hero .x-panel > *{transform:none!important;opacity:1!important;transition:none!important}
   .x-scrollhint::after{animation:none}
-}
-
-/* =================== FILM PARTS (from the film version) =================== */
-/* horizontal video reel */
-.x-reel{position:relative;height:300vh}
-.x-reel-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:flex;flex-direction:column;justify-content:center;gap:clamp(20px,3vw,40px);padding-top:70px}
-.x-reel-track{display:flex;align-items:center;gap:clamp(18px,3vw,44px);padding-inline:max(var(--x-gut),env(safe-area-inset-right,0px));width:max-content;will-change:transform}
-.x-reel-head{flex:none;width:clamp(260px,30vw,460px);align-self:center;display:grid;gap:6px}
-.x-reel .x-vid{flex:none;width:min(30vw,calc(66vh * .5625));align-self:center}
-.x-reel .x-vid .frame{aspect-ratio:9/16}
-.x-reel-bar{height:1px;background:var(--x-line);position:relative;width:100%}
-.x-reel-bar i{position:absolute;inset:0 0 0 auto;background:var(--x-bronze);transform-origin:right;transform:scaleX(0)}
-/* pinned story */
-.x-story-scene{position:relative;height:calc(var(--n) * 55vh + 60vh)}
-.x-story-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 1fr auto;padding-top:96px}
-.x-story-head{grid-column:1/-1}
-.x-story-photo{grid-column:2;grid-row:2;align-self:center;justify-self:center;width:min(360px,30vw);aspect-ratio:4/5;border-radius:999px 999px 6px 6px;overflow:hidden;border:1px solid rgba(196,148,106,.4);opacity:.92}
-.x-story-photo img{width:100%;height:100%;object-fit:cover;filter:sepia(.25) contrast(1.02)}
-.x-story-lines{grid-column:1;grid-row:2;position:relative;align-self:center;min-height:50vh;padding-inline:max(var(--x-gut),env(safe-area-inset-right,0px)) 20px}
-.x-line{position:absolute;inset:50% max(var(--x-gut),env(safe-area-inset-right,0px)) auto 20px;transform:translateY(calc(-50% + 30px));font:400 clamp(26px,2.7vw,42px)/1.32 var(--x-display);color:var(--x-sand);opacity:0;filter:blur(10px);transition:opacity .8s ease,transform 1s cubic-bezier(.2,.7,.1,1),filter .8s ease;max-width:22ch}
-.x-line.on{opacity:1;filter:blur(0);transform:translateY(-50%)}
-.x-line.past{opacity:0;transform:translateY(calc(-50% - 30px));filter:blur(8px)}
-.x-line.last{color:var(--x-bronze);font-size:clamp(34px,3.6vw,56px)}
-.x-story-count{grid-column:1/-1;grid-row:3;padding:0 var(--x-gut) calc(28px + env(safe-area-inset-bottom,0px));font:400 12px var(--x-mono);color:var(--x-mute);letter-spacing:.14em;direction:ltr;text-align:right}
-.x-story-count b{color:var(--x-bronze);font-weight:600}
-html.x-static .x-story-scene{height:auto}
-html.x-static .x-story-sticky{position:relative;height:auto;display:block;padding-block:100px}
-html.x-static .x-line{position:relative;inset:auto;transform:none;opacity:1;filter:none;margin:0 var(--x-gut) 18px;max-width:40ch}
-html.x-static .x-story-photo{width:min(320px,80vw);margin:24px auto}
-html.x-static .x-reel{height:auto}
-html.x-static .x-reel-sticky{position:relative;height:auto;padding-block:100px}
-html.x-static .x-reel-track{width:auto;flex-wrap:wrap;justify-content:center}
-@media (max-width:760px){
-  .x-story-sticky{grid-template-columns:1fr;grid-template-rows:auto auto 1fr auto}
-  .x-story-photo{grid-column:1;grid-row:2;width:44vw;margin-top:10px}
-  .x-story-lines{grid-column:1;grid-row:3;min-height:0}
-  .x-line{font-size:24px;max-width:none}
-  .x-line.last{font-size:30px}
-  .x-reel .x-vid{width:min(62vw,calc(58vh * .5625))}
-  .x-reel-head{width:78vw}
-}
-
-/* =================== PORTRAIT (v6) =================== */
-.x-portrait{position:absolute;left:clamp(40px,9vw,160px);top:50%;width:min(340px,25vw);aspect-ratio:380/490;transform:translateY(-46%);
-  border-radius:999px 999px 6px 6px;overflow:hidden;z-index:-1;opacity:0;transition:opacity .9s ease;
-  box-shadow:0 0 0 1px rgba(196,148,106,.55),0 0 80px -10px rgba(217,164,65,.35)}
-.x-portrait img{width:100%;height:100%;object-fit:cover;object-position:center 20%;filter:saturate(.92) contrast(1.03)}
-.x-portrait::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(14,11,9,.55),transparent 40%);pointer-events:none}
-.x-hero{position:relative}
-@media (max-width:760px){
-  .x-portrait{left:50%;top:calc(84px + env(safe-area-inset-top,0px));width:min(46vw,210px);transform:translateX(-50%)}
-  .x-hero{min-height:auto;padding-top:calc(118px + min(60vw,272px) + env(safe-area-inset-top,0px));padding-bottom:84px}
-  .x-room::before{background:linear-gradient(to top,rgba(14,11,9,.94) 45%,rgba(14,11,9,.55) 80%,transparent)}
-  .x-hero .x-h1{font-size:44px}
 }
 </style>
 </head>
@@ -402,7 +349,6 @@ html.x-static .x-reel-track{width:auto;flex-wrap:wrap;justify-content:center}
 <main id="main">
   <!-- HERO -->
   <section class="x-hero x-wrap" id="top" data-shape="hero">
-    <div class="x-portrait" aria-hidden="true"><img src="assets/hero.webp" alt="" width="760" height="980" decoding="async"></div>
     <div class="x-panel">
       <div class="x-eyebrow" lang="en" dir="ltr" style="justify-content:flex-end">S.I COSMETICS · FLORENTIN</div>
       <h1 class="x-h1">לייזר וטיפוח לגברים בפלורנטין.</h1>
@@ -583,47 +529,42 @@ html.x-static .x-reel-track{width:auto;flex-wrap:wrap;justify-content:center}
     <span class="x-sign" lang="en">OFF THE RECORD</span>
   </section>
 
-  <!-- VIDEOS: pinned horizontal reel -->
-  <section class="x-reel" id="proof" data-shape="ambient">
-    <div class="x-reel-sticky">
-      <div class="x-reel-track">
-        <div class="x-reel-head">
-        <div class="x-eyebrow x-rise"><b>04</b><span class="rule"></span><span class="he">מהקליניקה</span></div>
-        <h2 class="x-h2 x-split">מהקליניקה.</h2>
-        <p class="x-lede x-rise" style="margin-top:12px">ישראל סרבר מציג את הטיפולים — ענייני, מדוד, בלי מונחים שיווקיים.</p>
-        </div>
-        <div class="x-vid"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-1.jpg" aria-label="סרטון היכרות" title="היכרות"><source src="assets/video-1.mp4" type="video/mp4"></video></div><div class="lbl"><b>01</b> · היכרות</div></div>
-        <div class="x-vid"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-2.jpg" aria-label="סרטון לייזר" title="לייזר"><source src="assets/video-2.mp4" type="video/mp4"></video></div><div class="lbl"><b>02</b> · לייזר</div></div>
-        <div class="x-vid"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-3.jpg" aria-label="סרטון טיפול פנים" title="טיפול פנים"><source src="assets/video-3.mp4" type="video/mp4"></video></div><div class="lbl"><b>03</b> · טיפול פנים</div></div>
-        <div class="x-vid"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-4.jpg" aria-label="סרטון שיזוף" title="שיזוף"><source src="assets/video-4.mp4" type="video/mp4"></video></div><div class="lbl"><b>04</b> · שיזוף</div></div>
-      </div>
-      <div class="x-reel-bar x-wrap" aria-hidden="true"><i></i></div>
+  <!-- VIDEOS -->
+  <section class="x-sec x-wrap" id="proof" data-shape="ambient">
+    <div class="x-eyebrow x-rise"><b>04</b><span class="rule"></span><span class="he">מהקליניקה</span></div>
+    <h2 class="x-h2 x-split">מהקליניקה.</h2>
+    <p class="x-lede x-rise" style="margin-top:14px">ישראל סרבר מציג את הטיפולים — ענייני, מדוד, בלי מונחים שיווקיים.</p>
+    <div class="x-vids">
+      <div class="x-vid x-rise"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-1.jpg" aria-label="סרטון היכרות" title="היכרות"><source src="assets/video-1.mp4" type="video/mp4"></video></div><div class="lbl"><b>01</b> · היכרות</div></div>
+      <div class="x-vid x-rise"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-2.jpg" aria-label="סרטון לייזר" title="לייזר"><source src="assets/video-2.mp4" type="video/mp4"></video></div><div class="lbl"><b>02</b> · לייזר</div></div>
+      <div class="x-vid x-rise"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-3.jpg" aria-label="סרטון טיפול פנים" title="טיפול פנים"><source src="assets/video-3.mp4" type="video/mp4"></video></div><div class="lbl"><b>03</b> · טיפול פנים</div></div>
+      <div class="x-vid x-rise"><div class="frame"><video controls preload="none" playsinline muted loop poster="assets/video-4.jpg" aria-label="סרטון שיזוף" title="שיזוף"><source src="assets/video-4.mp4" type="video/mp4"></video></div><div class="lbl"><b>04</b> · שיזוף</div></div>
     </div>
   </section>
 
-  <!-- ABOUT: pinned story, one line at a time -->
-  <section class="x-story-scene" id="about" data-shape="drop" style="--n:9">
-    <div class="x-story-sticky">
-      <div class="x-story-head x-wrap">
-        <div class="x-eyebrow"><b>05</b><span class="rule" style="transform:none"></span><span class="he">קצת עליי</span></div>
-        <h2 class="x-h2" style="font-size:clamp(32px,3.2vw,46px)">קצת עליי:</h2>
+  <!-- ABOUT -->
+  <section class="x-sec x-wrap" id="about" data-shape="ambient">
+    <div class="x-eyebrow x-rise"><b>05</b><span class="rule"></span><span class="he">קצת עליי</span></div>
+    <h2 class="x-h2 x-split">קצת עליי:</h2>
+    <div class="x-about">
+      <div class="x-photo x-rise"><div class="img"><img src="assets/story.webp" loading="lazy" decoding="async" width="800" height="800" alt="ישראל כילד ואמא זהבה מול המראה"></div></div>
+      <div class="x-about-copy">
+        <p class="intro x-rise">אני ישראל סרבר. החיבור שלי לטיפוח התחיל בבית, הרבה לפני חדר הטיפולים. היום אני מביא את תשומת הלב הזאת לכל מפגש.</p>
+        <details class="x-story x-rise">
+          <summary>הסיפור שלי →</summary>
+          <div class="story">
+            <p>לפני חדר הטיפולים, לפני המכשירים - היה בוקר.</p>
+            <p>החיבור שלי לעולם הקוסמטיקה התחיל בבית. בכל בוקר, לפני הגן ובית הספר, הייתי עומד מרותק למראה. לא שלי - של אמא שלי, זהבה.</p>
+            <p>ילד קטן שעומד מהצד ופשוט בוהה בה. קרם אחרי קרם, שכבה אחרי שכבה. היא מעולם לא מיהרה. במין טקס טיפוח שקט וקסום של הקפדה.</p>
+            <p>לא הבנתי אז מה בדיוק היא שמה על הפנים, אבל דרך העיניים של אותו ילד, הבנתי משהו עמוק יותר: טיפוח הוא קודם כל אהבה עצמית. זה הרגע ביום שבו אדם דואג לעצמו כדי לצאת אל העולם בטוח וקורן.</p>
+            <p>התמונה הזאת נשארה איתי.</p>
+            <p>אמא, בזכותך למדתי להעריך אסתטיקה. התשוקה הזו שניטעה בי אז היא המנוע שלי היום - ולימדת אותי את זה בלי שבכלל התכוונת.</p>
+            <p>ההרגל השקט של אמא מול המראה הוא מה שהביא אותי לכאן. לא טרנד, לא באזז. משם הגעתי לחדר הזה - כדי לקחת את אותה תחושת השקעה, ולטפל בגברים כמו שמגיע להם. אחד על אחד. בלי הצגה. לגרום להם להרגיש ולהיראות במיטבם.</p>
+            <p>בהיתי בה, ולא שכחתי.</p>
+          </div>
+        </details>
       </div>
-      <div class="x-story-photo"><img src="assets/story.webp" loading="lazy" decoding="async" width="800" height="800" alt="ישראל כילד ואמא זהבה מול המראה"></div>
-      <div class="x-story-lines">
-          <p class="x-line">אני ישראל סרבר. החיבור שלי לטיפוח התחיל בבית, הרבה לפני חדר הטיפולים. היום אני מביא את תשומת הלב הזאת לכל מפגש.</p>
-          <p class="x-line">לפני חדר הטיפולים, לפני המכשירים - היה בוקר.</p>
-          <p class="x-line">החיבור שלי לעולם הקוסמטיקה התחיל בבית. בכל בוקר, לפני הגן ובית הספר, הייתי עומד מרותק למראה. לא שלי - של אמא שלי, זהבה.</p>
-          <p class="x-line">ילד קטן שעומד מהצד ופשוט בוהה בה. קרם אחרי קרם, שכבה אחרי שכבה. היא מעולם לא מיהרה. במין טקס טיפוח שקט וקסום של הקפדה.</p>
-          <p class="x-line">לא הבנתי אז מה בדיוק היא שמה על הפנים, אבל דרך העיניים של אותו ילד, הבנתי משהו עמוק יותר: טיפוח הוא קודם כל אהבה עצמית. זה הרגע ביום שבו אדם דואג לעצמו כדי לצאת אל העולם בטוח וקורן.</p>
-          <p class="x-line">התמונה הזאת נשארה איתי.</p>
-          <p class="x-line">אמא, בזכותך למדתי להעריך אסתטיקה. התשוקה הזו שניטעה בי אז היא המנוע שלי היום - ולימדת אותי את זה בלי שבכלל התכוונת.</p>
-          <p class="x-line">ההרגל השקט של אמא מול המראה הוא מה שהביא אותי לכאן. לא טרנד, לא באזז. משם הגעתי לחדר הזה - כדי לקחת את אותה תחושת השקעה, ולטפל בגברים כמו שמגיע להם. אחד על אחד. בלי הצגה. לגרום להם להרגיש ולהיראות במיטבם.</p>
-          <p class="x-line last">בהיתי בה, ולא שכחתי.</p>
-      </div>
-      <div class="x-story-count" aria-hidden="true"><b class="cur">01</b> / 09</div>
     </div>
-  </section>
-  <section class="x-sec x-wrap" style="padding-top:clamp(40px,6vw,80px)" data-shape="ambient">
     <div class="x-trust">
       <div class="head x-rise">
         <div class="x-eyebrow" lang="en" dir="ltr" style="justify-content:flex-end;margin-bottom:12px">PROFESSIONAL BACKGROUND</div>
@@ -679,7 +620,7 @@ html.x-static .x-reel-track{width:auto;flex-wrap:wrap;justify-content:center}
 </main>
 <footer class="x-foot x-wrap"><span lang="en" dir="ltr">© 2026 S.I COSMETICS · FLORENTIN, TEL AVIV</span><span class="he">מקצועי. פרטי. לגברים.</span></footer>
 
-<a class="x-wa" id="x-wa" href="https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener" aria-label="תיאום בוואטסאפ"><i></i><span>לתיאום בוואטסאפ</span></a>
+<a class="x-wa" href="https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C" target="_blank" rel="noopener" aria-label="תיאום בוואטסאפ"><i></i><span>לתיאום בוואטסאפ</span></a>
 
 <!-- S.I SKIN MATCH™: Authentic Clinical Facial Match Modal -->
   <div id="skin-match-modal" class="sm-modal" role="dialog" aria-modal="true" aria-labelledby="sm-modal-title" hidden>
@@ -1026,7 +967,6 @@ html.x-static .x-reel-track{width:auto;flex-wrap:wrap;justify-content:center}
 <script src="checker.js"></script>
 <script src="skin-match.js"></script>
 <script src="world.js"></script>
-<script src="film.js"></script>
 
 </body>
 </html>

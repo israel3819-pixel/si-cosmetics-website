@@ -95,15 +95,14 @@
   var intro = D.getElementById('x-intro'), introState = { running: false, k: 1 };
   function ready() { body.classList.add('ready'); }
   function runIntro(onOpenStart) {
-    var seen = false; try { seen = sessionStorage.getItem('si-intro') === '1'; sessionStorage.setItem('si-intro', '1'); } catch (e) {}
-    if (!intro || reduce || seen) { if (intro) intro.remove(); introState.k = 1; ready(); return; }
+    if (!intro || reduce) { if (intro) intro.remove(); introState.k = 1; ready(); return; }
     root.classList.add('x-intro-on'); introState.running = true; introState.k = 0;
     var lock = intro.querySelector('.x-lockup'), curtain = intro.querySelector('.x-curtain'), cpath = curtain.querySelector('path');
     var timers = [], opened = false, t0 = 0;
     var at = function (ms, fn) { timers.push(setTimeout(fn, ms)); };
     at(60, function () { intro.classList.add('s-draw'); });
-    at(650, function () { intro.classList.add('s-word'); });
-    at(1250, open);
+    at(1000, function () { intro.classList.add('s-word'); });
+    at(2000, open);
     function open() {
       if (opened) return; opened = true; timers.forEach(clearTimeout);
       intro.classList.add('s-draw', 's-word');
@@ -117,7 +116,7 @@
       }
       draw(1); intro.classList.add('s-open');
       t0 = performance.now();
-      var dur = 1500, flight = 3000, shown = false;
+      var dur = 2100, flight = 4200, shown = false;
       (function step(now) {
         var u = clamp((now - t0) / dur, 0, 1);
         draw(1 + (sMax - 1) * Math.pow(u, 2.2));
@@ -189,7 +188,7 @@
     var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(42, 1, .1, 120);
     var N = narrow() ? 5200 : (lowEnd ? 6000 : 9500);
     var A = {}; ['p0', 'p1', 'p2', 'p3', 'p5', 'p7'].forEach(function (k) { A[k] = new Float32Array(N * 3); });
-    var pcol = new Float32Array(N * 3), spray = new Float32Array(N * 4), rnd = new Float32Array(N), beam = new Float32Array(N), arch = new Float32Array(N), scl = new Float32Array(N);
+    var spray = new Float32Array(N * 4), rnd = new Float32Array(N), beam = new Float32Array(N), arch = new Float32Array(N), scl = new Float32Array(N);
     var set = function (a, i, x, y, z) { a[i * 3] = x; a[i * 3 + 1] = y; a[i * 3 + 2] = z; };
     var sph = function () { var u = R() * 2 - 1, t = R() * Math.PI * 2, r = Math.sqrt(1 - u * u); return [r * Math.cos(t), u, r * Math.sin(t)]; };
     var i, q;
@@ -225,8 +224,6 @@
     g.setAttribute('aRand', new THREE.BufferAttribute(rnd, 1));
     g.setAttribute('aBeam', new THREE.BufferAttribute(beam, 1));
     g.setAttribute('aArch', new THREE.BufferAttribute(arch, 1));
-    for (i = 0; i < N; i++) { pcol[i * 3] = .89; pcol[i * 3 + 1] = .79; pcol[i * 3 + 2] = .65; }
-    var colAttr = new THREE.BufferAttribute(pcol, 3); g.setAttribute('aCol', colAttr);
     g.setAttribute('aScale', new THREE.BufferAttribute(scl, 1));
     g.boundingSphere = new THREE.Sphere(new THREE.Vector3(), 60);
     var C = function (h) { return new THREE.Color(h); };
@@ -240,7 +237,7 @@
       uniforms: U, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending,
       vertexShader: [
         'uniform float uFrom,uTo,uT,uTime,uScanX,uSize,uPR,uRepel; uniform vec2 uMouse; uniform vec3 uC[8];',
-        'attribute vec3 p0,p1,p2,p3,p5,p7; attribute vec4 aSpray; attribute float aRand,aBeam,aScale,aArch; attribute vec3 aCol;',
+        'attribute vec3 p0,p1,p2,p3,p5,p7; attribute vec4 aSpray; attribute float aRand,aBeam,aScale,aArch;',
         'varying vec3 vCol; varying float vA;',
         'mat2 r2(float a){ float c=cos(a), s=sin(a); return mat2(c,-s,s,c); }',
         'float wt(float i,float t){ return (abs(uFrom-i)<.5 ? 1.-t : 0.) + (abs(uTo-i)<.5 ? t : 0.); }',
@@ -249,7 +246,7 @@
         '  float w0=wt(0.,t), w1=wt(1.,t), w2=wt(2.,t), w3=wt(3.,t), w4=wt(4.,t), w5=wt(5.,t), w6=wt(6.,t), w7=wt(7.,t);',
         '  vec3 a0 = p0 + .35*vec3(sin(uTime*.3+aRand*40.), cos(uTime*.25+aRand*30.), 0.);',
         '  vec3 a6 = p0*vec3(1.15,1.2,1.) + vec3(0.,0.,-3.); a6.xz = r2(uTime*.025)*a6.xz; a6.y += .4*sin(uTime*.2+aRand*12.);',
-        '  vec3 a1 = p1 + vec3(.012*sin(uTime*1.1+aRand*40.), .012*cos(uTime*.9+aRand*30.), .05*sin(uTime*.7+aRand*20.));',
+        '  vec3 a1 = p1; if(aArch<.5){ a1 = p1*(1.+.025*sin(uTime*1.3+aRand*6.283)); a1.xz = r2(uTime*.12)*a1.xz; } else { a1.z += .04*sin(uTime*2.+aRand*30.); }',
         '  vec3 a2 = p2; if(aBeam>.5) a2.x += uScanX;',
         '  vec3 a3 = p3; a3.xz = r2(uTime*.16)*a3.xz; a3.y += .06*sin(uTime*.8);',
         '  float s = fract(aSpray.x + uTime*.11);',
@@ -260,7 +257,7 @@
         '  vec3 a5 = p5 + .02*vec3(sin(uTime+aRand*50.), cos(uTime*1.2+aRand*30.), 0.);',
         '  vec3 a7 = p7 + .03*vec3(sin(uTime*1.1+aRand*40.), cos(uTime*.9+aRand*30.), 0.);',
         '  vec3 pos = a0*w0 + a1*w1 + a2*w2 + a3*w3 + a4*w4 + a5*w5 + a6*w6 + a7*w7;',
-        '  vec3 c = uC[0]*w0 + mix(aCol, vec3(.86,.6,.38), aArch)*w1 + uC[2]*w2 + uC[3]*w3 + uC[4]*w4 + uC[5]*w5 + uC[6]*w6 + uC[7]*w7;',
+        '  vec3 c = uC[0]*w0 + mix(uC[1], vec3(.80,.56,.36), aArch)*w1 + uC[2]*w2 + uC[3]*w3 + uC[4]*w4 + uC[5]*w5 + uC[6]*w6 + uC[7]*w7;',
         '  float scan = aBeam>.5 ? 1. : exp(-pow((p2.x-uScanX)*2.4, 2.));',
         '  c = mix(c, vec3(1.,.42,.24), scan*w2*.95);',
         '  vec2 dm = pos.xy - uMouse; float fm = exp(-dot(dm,dm)*1.3)*uRepel;',
@@ -324,57 +321,8 @@
     };
     var KM = {
       0: [0, .2, 48, 0, 0, 0], 1: [0, .3, 13, 0, -1.9, 0], 2: [0, 4.2, 15.5, 0, -2.8, 0], 3: [0, .4, 14, 0, -2.6, 0],
-      4: [0, .6, 12, 0, -1.8, 0], 5: [0, .4, 22, 0, -4.4, 0], 6: [0, 0, 15, 0, 0, 0], 7: [0, .2, 20, 0, -3.8, 0]
+      4: [0, .6, 12, 0, -1.8, 0], 5: [0, .4, 22, 0, -4.4, 0], 6: [0, 0, 15, 0, 0, 0], 7: [0, .2, 15, 0, -2.6, 0]
     };
-    var pEl = D.querySelector('.x-portrait'), pImg = pEl && pEl.querySelector('img'), tmpCam = new THREE.PerspectiveCamera(42, 1, .1, 120);
-    var nPortrait = Math.floor(N * .72);
-    function toWorld(sx, sy, kf) {
-      var w = W.innerWidth, h = W.innerHeight;
-      tmpCam.aspect = w / h; tmpCam.updateProjectionMatrix();
-      tmpCam.position.set(kf[0], kf[1], kf[2]); tmpCam.lookAt(kf[3], kf[4], kf[5]); tmpCam.updateMatrixWorld();
-      var v = new THREE.Vector3(sx / w * 2 - 1, -(sy / h) * 2 + 1, .5).unproject(tmpCam).sub(tmpCam.position).normalize();
-      var t = -tmpCam.position.z / v.z; return [tmpCam.position.x + v.x * t, tmpCam.position.y + v.y * t];
-    }
-    function buildPortrait() {
-      if (!pEl || !pImg || !pImg.naturalWidth) return;
-      var r = pEl.getBoundingClientRect(), top0 = r.top + W.scrollY;
-      var kf = (narrow() ? KM : K)[1];
-      var tl = toWorld(r.left, top0, kf), br = toWorld(r.right, top0 + r.height, kf);
-      var L = tl[0], T = tl[1], Rr = br[0], B = br[1], ww = Rr - L, hh = T - B;
-      var cw = 180, ch = Math.round(cw * r.height / r.width), c = D.createElement('canvas'); c.width = cw; c.height = ch;
-      var g2 = c.getContext('2d');
-      var iw = pImg.naturalWidth, ih = pImg.naturalHeight, sc = Math.max(cw / iw, ch / ih), dw = iw * sc, dh = ih * sc;
-      g2.drawImage(pImg, (cw - dw) / 2, (ch - dh) * .2, dw, dh);
-      var data; try { data = g2.getImageData(0, 0, cw, ch).data; } catch (e) { return; }
-      var rad = cw / 2, k2 = 0, tries = 0;
-      while (k2 < nPortrait && tries < nPortrait * 40) {
-        tries++;
-        var x = Math.random() * cw, y = Math.random() * ch, xi = x | 0, yi = y | 0;
-        if (y < rad && Math.hypot(x - rad, y - rad) > rad) continue;            // outside the arch top
-        var o = (yi * cw + xi) * 4, lum = (data[o] * .3 + data[o + 1] * .59 + data[o + 2] * .11) / 255;
-        if (Math.random() > .18 + lum * .95) continue;                         // denser where the photo is bright
-        set(A.p1, k2, L + x / cw * ww, T - y / ch * hh, (lum - .5) * .35);
-        var gr = data[o] / 255, gg = data[o + 1] / 255, gb = data[o + 2] / 255;
-        pcol[k2 * 3] = Math.min(1, gr * .78 + .22 * .95); pcol[k2 * 3 + 1] = Math.min(1, gg * .78 + .22 * .72); pcol[k2 * 3 + 2] = Math.min(1, gb * .78 + .22 * .45);
-        arch[k2] = 0; k2++;
-      }
-      var a = ww / 2 * 1.12, cx = L + ww / 2, sy = T - ww / 2, by = B - hh * .02;
-      for (var i3 = k2; i3 < N; i3++) {
-        arch[i3] = 1; var q3 = archPt(Math.random(), a, sy, by);
-        set(A.p1, i3, cx + q3[0] + (Math.random() - .5) * .05, q3[1] + (Math.random() - .5) * .05, (Math.random() - .5) * .06);
-      }
-      g.attributes.p1.needsUpdate = true; colAttr.needsUpdate = true; g.attributes.aArch.needsUpdate = true;
-    }
-    if (pImg) { if (pImg.complete && pImg.naturalWidth) setTimeout(buildPortrait, 50); else pImg.addEventListener('load', buildPortrait); }
-    var rpT = 0; W.addEventListener('resize', function () { clearTimeout(rpT); rpT = setTimeout(buildPortrait, 250); });
-    // the photo shows once the dust has gathered, and dissolves back into dust as you scroll on
-    function portraitFade() {
-      if (!pEl) return;
-      var on = body.classList.contains('ready') && !(introState.running || introState.k < 1);
-      var o = on ? clamp(1 - W.scrollY / (W.innerHeight * .32), 0, 1) * clamp(1 - S * 3, 0, 1) : 0;
-      pEl.style.opacity = o.toFixed(3);
-    }
-
     var SH = { hero: 1, laser: 2, drop: 3, tan: 4, logo: 5, ambient: 6, arch: 7 };
     var anchors = [].slice.call(D.querySelectorAll('[data-shape]')).map(function (el) { return { el: el, s: SH[el.dataset.shape] }; });
 
@@ -409,7 +357,6 @@
 
     return {
       frame: function (dt) {
-        portraitFade();
         time += dt * (reduce ? .25 : 1);
         if (!(introState.running || introState.k < 1)) {
           // segments where the shape stays the same (ambient → ambient) carry no story, so cross them quickly
