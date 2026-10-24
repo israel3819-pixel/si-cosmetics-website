@@ -5,7 +5,7 @@
   --bg:#0E0B09; --surface:#17120F; --ink:#EDE6DC; --muted:#A99C8C; --line:rgba(237,230,220,.14);
   --accent:#C4946A; --accent-soft:rgba(196,148,106,.14); --rose:#D9A441; --ok:#8FD19E; --bad:#FF6B3D; --warn:#D9A441;
   --stage:#0A0806; --stage-ink:#EDE6DC;
-  --x-sand:#EDE6DC; --x-ink:#0E0B09; --x-bronze:#C4946A; --x-amber:#D9A441; --x-dim:#A99C8C; --x-mute:#7D7266;
+  --x-sand:#EDE6DC; --x-ink:#0E0B09; --x-bronze:#C4946A; --x-amber:#D9A441; --x-dim:#A99C8C; --x-mute:#958A7C;
   --x-tech:"Archivo","Helvetica Neue",Arial,sans-serif;
   color-scheme:dark;
 }
@@ -86,8 +86,11 @@ h1 span{color:var(--x-bronze);font-family:var(--x-tech);font-weight:700;letter-s
 .x-next h2{font-family:var(--f-display);font-weight:700;font-size:clamp(28px,3.4vw,42px);margin:0;color:var(--ink)}
 .x-next p{margin:0;max-width:62ch;color:var(--ink);opacity:.86;font-size:16.5px}
 .x-ctas{display:flex;flex-wrap:wrap;gap:12px;margin-top:6px}
-.x-foot{max-width:1180px;margin:40px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px;border-top:1px solid var(--line);font:400 11px var(--x-tech);letter-spacing:.18em;color:var(--x-mute)}
+.x-foot{max-width:1180px;margin:40px auto 0;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px;padding-top:24px;padding-bottom:calc(60px + env(safe-area-inset-bottom,0px));border-top:1px solid var(--line);font:400 11px var(--x-tech);letter-spacing:.18em;color:var(--x-mute)}
 .x-foot .he{font-family:var(--f-body);letter-spacing:.04em;color:var(--x-bronze)}
 .x-wa{position:fixed;left:max(20px,env(safe-area-inset-left,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));z-index:90;display:inline-flex;align-items:center;gap:10px;background:rgba(14,11,9,.82);border:1px solid rgba(196,148,106,.5);color:var(--x-sand);padding:11px 18px;border-radius:999px;font-size:14.5px;text-decoration:none;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
 .x-wa i{width:8px;height:8px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 4px rgba(74,222,128,.18)}
 @media (max-width:760px){.x-wa span{font-size:13.5px}.x-wa{padding:10px 14px}}
+
+.x-legal{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--f-body);letter-spacing:.02em;font-size:13px}
+.x-legal a{color:var(--x-dim);text-decoration:underline;text-underline-offset:3px}

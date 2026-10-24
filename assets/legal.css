@@ -1,0 +1,35 @@
+/* S·I COSMETICS · legal & info pages (accessibility, privacy, terms). Same ink / sand / bronze language as the home page. */
+:root{--ink:#0E0B09;--card:#17120F;--sand:#EDE6DC;--dim:#B5A898;--mute:#958A7C;--bronze:#C4946A;--amber:#D9A441;--line:rgba(237,230,220,.14);
+  --display:"Bellefair","Frank Ruhl Libre",Georgia,serif;--body:"IBM Plex Sans Hebrew","Assistant",system-ui,sans-serif;--tech:"Archivo","Helvetica Neue",Arial,sans-serif;color-scheme:dark}
+*{box-sizing:border-box}
+html{background:var(--ink)}
+body{margin:0;background:radial-gradient(60% 40% at 20% 0%,rgba(169,123,82,.14),transparent 70%),var(--ink);color:var(--sand);font:300 17px/1.8 var(--body);direction:rtl;-webkit-font-smoothing:antialiased;
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+a{color:var(--amber);text-underline-offset:3px}
+:focus-visible{outline:2px solid var(--amber);outline-offset:3px}
+.skip{position:fixed;top:-100px;right:16px;z-index:300;background:var(--sand);color:var(--ink);padding:10px 16px;border-radius:999px;font-size:14px;text-decoration:none}
+.skip:focus{top:12px}
+.top{max-width:860px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:20px 10px}
+.brand{display:flex;align-items:center;gap:10px;direction:ltr;text-decoration:none;color:var(--sand)}
+.brand svg{width:32px;height:auto;color:var(--bronze)}
+.brand span{font:500 12.5px var(--tech);letter-spacing:.32em}
+.back{font-size:14px;color:var(--dim);text-decoration:none}
+.back:hover{color:var(--sand)}
+main{max-width:860px;margin:0 auto;padding-block:30px 60px}
+.eyebrow{font:400 11px/1.4 var(--tech);letter-spacing:.3em;color:var(--dim);margin:0 0 14px}
+h1{font:400 clamp(40px,6vw,64px)/1.05 var(--display);margin:0 0 10px;text-wrap:balance}
+.updated{color:var(--dim);font-size:14px;margin:0 0 34px}
+h2{font:500 21px/1.4 var(--body);margin:38px 0 10px;color:var(--sand)}
+p,li{color:#E2D9CD;max-width:68ch}
+ul{padding-inline-start:22px;margin:8px 0}
+li{margin-bottom:6px}
+.card{border:1px solid var(--line);border-radius:20px;padding:20px 22px;background:linear-gradient(160deg,rgba(237,230,220,.05),rgba(14,11,9,.4));margin-top:14px}
+.card dl{display:grid;grid-template-columns:max-content 1fr;gap:6px 18px;margin:0}
+.card dt{color:var(--dim)}
+.card dd{margin:0}
+.num{direction:ltr;unicode-bidi:isolate}
+.note{border-inline-start:2px solid var(--amber);padding-inline-start:14px;color:var(--dim);font-size:15px}
+footer{max-width:860px;margin:0 auto;border-top:1px solid var(--line);padding-block:22px 40px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px 20px;font-size:13px;color:var(--mute)}
+footer nav{display:flex;flex-wrap:wrap;gap:6px 18px}
+footer a{color:var(--dim)}
+@media (max-width:620px){.card dl{grid-template-columns:1fr}.card dt{margin-top:6px}}

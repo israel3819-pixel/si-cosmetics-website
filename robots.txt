@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /classic
-Sitemap: https://si-cosmetics-tlv.netlify.app/sitemap.xml
+Sitemap: https://si-cosmetics.co.il/sitemap.xml

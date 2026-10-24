@@ -22,7 +22,8 @@
   });
   [].forEach.call(D.querySelectorAll('a[href^="#"]'), function (a) {
     a.addEventListener('click', function (e) {
-      var t = D.querySelector(a.getAttribute('href')); if (!t) return;
+      var href = a.getAttribute('href'); if (!href || href.length < 2) return;
+      var t = D.querySelector(href); if (!t) return;
       e.preventDefault(); top.classList.remove('is-open'); menuBtn && menuBtn.setAttribute('aria-expanded', 'false');
       var y = W.scrollY + t.getBoundingClientRect().top - (t.id === 'top' ? 0 : 70);
       W.scrollTo({ top: y, behavior: reduce ? 'auto' : 'smooth' });
@@ -145,8 +146,9 @@
   var last = performance.now();
   (function loop(now) {
     var dt = Math.min(.05, (now - last) / 1000); last = now;
-    if (!reduce) marquee(dt);
-    if (world) world.frame(dt);
+    var paused = root.classList.contains('x-paused');
+    if (!reduce && !paused) marquee(dt);
+    if (world) world.frame(dt, paused);
     requestAnimationFrame(loop);
   })(last);
 
@@ -327,8 +329,8 @@
     }
 
     return {
-      frame: function (dt) {
-        time += dt * (reduce ? .25 : 1);
+      frame: function (dt, paused) {
+        time += paused ? 0 : dt * (reduce ? .25 : 1);
         ySm += (W.scrollY - ySm) * Math.min(1, dt * (reduce ? 20 : 5));
         var from, to, u;
         if (introState.running || introState.k < 1) { from = 0; to = 1; u = introState.k; }
