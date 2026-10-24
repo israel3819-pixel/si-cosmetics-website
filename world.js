@@ -47,7 +47,7 @@
     el.textContent = '';
     words.forEach(function (w, i) {
       var o = D.createElement('span'); o.className = 'w';
-      var s = D.createElement('span'); s.textContent = w; s.style.transitionDelay = (i * 110) + 'ms';
+      var s = D.createElement('span'); s.textContent = w; s.style.transitionDelay = (i * 60) + 'ms';
       o.appendChild(s); el.appendChild(o);
       if (i < words.length - 1) el.appendChild(D.createTextNode(' '));
     });
@@ -116,7 +116,7 @@
       }
       draw(1); intro.classList.add('s-open');
       t0 = performance.now();
-      var dur = 2100, flight = 4200, shown = false;
+      var dur = 1500, flight = 2600, shown = false;
       (function step(now) {
         var u = clamp((now - t0) / dur, 0, 1);
         draw(1 + (sMax - 1) * Math.pow(u, 2.2));
@@ -161,30 +161,7 @@
     var canvas = D.getElementById('x-stage');
     var rd = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, powerPreference: 'high-performance' });
     rd.setPixelRatio(Math.min(W.devicePixelRatio || 1, narrow() ? 1.6 : 2));
-    rd.setClearColor(0x15110E, 1); rd.autoClear = false;
-    var bgScene = new THREE.Scene(), bgCam = new THREE.OrthographicCamera(-1, 1, 1, -1, 0, 1);
-    var BG = { uTime: { value: 0 }, uRes: { value: new THREE.Vector2(1, 1) }, uTint: { value: new THREE.Color('#8A6446') },
-      uTint2: { value: new THREE.Color('#566472') }, uMouse2: { value: new THREE.Vector2(.5, .5) } };
-    bgScene.add(new THREE.Mesh(new THREE.PlaneGeometry(2, 2), new THREE.ShaderMaterial({
-      uniforms: BG, depthWrite: false, depthTest: false,
-      vertexShader: 'varying vec2 vUv; void main(){ vUv=uv; gl_Position=vec4(position.xy,0.,1.); }',
-      fragmentShader: [
-        'uniform float uTime; uniform vec2 uRes,uMouse2; uniform vec3 uTint,uTint2; varying vec2 vUv;',
-        'float blob(vec2 p, vec2 c, float r){ vec2 d=(p-c)*vec2(uRes.x/uRes.y,1.); return exp(-dot(d,d)/(r*r)); }',
-        'float hash(vec2 p){ return fract(sin(dot(p,vec2(12.9898,78.233)))*43758.5453); }',
-        'void main(){',
-        '  vec2 p=vUv; float t=uTime*.04;',
-        '  vec3 c=vec3(.072,.06,.052);',
-        '  c += uTint*.34*blob(p, vec2(.26+.08*sin(t*1.3), .70+.07*cos(t)), .62);',
-        '  c += vec3(.80,.72,.62)*.08*blob(p, vec2(.80+.06*cos(t*.9), .86+.05*sin(t*1.1)), .5);',
-        '  c += uTint2*.24*blob(p, vec2(.72+.1*sin(t*.7), .20+.06*cos(t*1.2)), .66);',
-        '  c += vec3(.92,.70,.42)*.07*blob(p, uMouse2, .32);',
-        '  c *= 1.-.4*pow(length(p-.5)*1.25,2.);',
-        '  c += (hash(p*uRes+fract(t))-.5)*.012;',
-        '  gl_FragColor=vec4(c,1.);',
-        '}'].join('\n')
-    })));
-    var TINT = [ '#6E5440', '#8A6446', '#94503A', '#6F7C88', '#A0703F', '#8A6446', '#7A604B', '#8A6446' ].map(function (h) { return new THREE.Color(h); });
+    rd.setClearColor(0x0E0B09, 1);
     var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(42, 1, .1, 120);
     var N = narrow() ? 5200 : (lowEnd ? 6000 : 9500);
     var A = {}; ['p0', 'p1', 'p2', 'p3', 'p5', 'p7'].forEach(function (k) { A[k] = new Float32Array(N * 3); });
@@ -268,10 +245,10 @@
         '  a *= mix(1., .4, w0); a *= mix(1., .32, w6);',
         '  vec4 mv = modelViewMatrix*vec4(pos,1.);',
         '  gl_Position = projectionMatrix*mv;',
-        '  gl_PointSize = 1.9*uSize*aScale*(1.+scan*w2*.9)*(1.+w4*s*1.3)*(1.+fm*.8)*uPR*(10./-mv.z);',
+        '  gl_PointSize = uSize*aScale*(1.+scan*w2*.9)*(1.+w4*s*1.3)*(1.+fm*.8)*uPR*(10./-mv.z);',
         '  vCol = c; vA = a;',
         '}'].join('\n'),
-      fragmentShader: 'varying vec3 vCol; varying float vA; void main(){ float d=length(gl_PointCoord-.5); float core=smoothstep(.26,.0,d); float halo=pow(smoothstep(.5,.0,d),2.2)*.55; gl_FragColor=vec4(vCol*1.45,(core+halo)*vA); }'
+      fragmentShader: 'varying vec3 vCol; varying float vA; void main(){ float d=length(gl_PointCoord-.5); float a=smoothstep(.5,.04,d); gl_FragColor=vec4(vCol,a*vA*.85); }'
     });
     scene.add(new THREE.Points(g, mat));
 
@@ -308,9 +285,8 @@
     if (!narrow() && !lowEnd && THREE.EffectComposer && THREE.UnrealBloomPass && THREE.RenderPass) {
       try {
         composer = new THREE.EffectComposer(rd);
-        composer.addPass(new THREE.RenderPass(bgScene, bgCam));
-        var rp2 = new THREE.RenderPass(scene, cam); rp2.clear = false; composer.addPass(rp2);
-        composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W.innerWidth, W.innerHeight), .5, .45, .5));
+        composer.addPass(new THREE.RenderPass(scene, cam));
+        composer.addPass(new THREE.UnrealBloomPass(new THREE.Vector2(W.innerWidth, W.innerHeight), .85, .55, .22));
       } catch (e) { composer = null; }
     }
 
@@ -330,44 +306,30 @@
       var w = W.innerWidth, h = W.innerHeight;
       rd.setSize(w, h, false); cam.aspect = w / h; cam.updateProjectionMatrix();
       if (composer) composer.setSize(w, h);
-      BG.uRes.value.set(w, h);
     }
     size(); W.addEventListener('resize', size);
 
     var ray = new THREE.Raycaster(), plane = new THREE.Plane(new THREE.Vector3(0, 0, 1), 0), hit = new THREE.Vector3(), ndc = new THREE.Vector2(9, 9);
-    var m2 = new THREE.Vector2(.5, .5), lastMove = -1e9, mTarget = new THREE.Vector2(99, 99);
-    W.addEventListener('pointermove', function (e) { m2.set(e.clientX / W.innerWidth, 1 - e.clientY / W.innerHeight); ndc.set(e.clientX / W.innerWidth * 2 - 1, -(e.clientY / W.innerHeight) * 2 + 1); lastMove = performance.now(); }, { passive: true });
+    var lastMove = -1e9, mTarget = new THREE.Vector2(99, 99);
+    W.addEventListener('pointermove', function (e) { ndc.set(e.clientX / W.innerWidth * 2 - 1, -(e.clientY / W.innerHeight) * 2 + 1); lastMove = performance.now(); }, { passive: true });
 
-    var time = 0, look = new THREE.Vector3(), S = 0, Svel = 0, MAXV = reduce ? 6 : .38;
-    // where the scroll says the story is, in anchor units (2.0 = fully on anchor 2)
-    function targetS() {
-      var y = W.scrollY, vh = W.innerHeight, ys = anchors.map(function (a) { var r = a.el.getBoundingClientRect(); return y + r.top + r.height / 2 - vh / 2; });
-      if (y <= ys[0]) return (lastTarget = 0);
-      for (var i = 0; i < anchors.length - 1; i++) {
-        if (y < ys[i + 1]) { var local = (y - ys[i]) / Math.max(1, ys[i + 1] - ys[i]); return (lastTarget = i + clamp((local - .25) / .5, 0, 1)); }
-      }
-      return (lastTarget = anchors.length - 1);
-    }
-    var lastTarget = 0;
-    function diff0() { return lastTarget - S; }
+    var ySm = W.scrollY, time = 0, look = new THREE.Vector3();
     function sample() {
-      var i = Math.min(anchors.length - 1, Math.floor(S + 1e-4)), j = Math.min(anchors.length - 1, i + 1);
-      return [anchors[i].s, anchors[j].s, clamp(S - i, 0, 1)];
+      var y = ySm, vh = W.innerHeight, ys = anchors.map(function (a) { var r = a.el.getBoundingClientRect(); return W.scrollY + r.top + r.height / 2 - vh / 2; });
+      if (y <= ys[0]) return [anchors[0].s, anchors[0].s, 0];
+      for (var i = 0; i < anchors.length - 1; i++) {
+        if (y < ys[i + 1]) {
+          var local = (y - ys[i]) / Math.max(1, ys[i + 1] - ys[i]);
+          return [anchors[i].s, anchors[i + 1].s, clamp((local - .25) / .5, 0, 1)];
+        }
+      }
+      var L = anchors[anchors.length - 1].s; return [L, L, 0];
     }
 
     return {
       frame: function (dt) {
         time += dt * (reduce ? .25 : 1);
-        if (!(introState.running || introState.k < 1)) {
-          // segments where the shape stays the same (ambient → ambient) carry no story, so cross them quickly
-          var si = Math.min(anchors.length - 1, Math.floor(S + (diff0(S) >= 0 ? 1e-4 : -1e-4))), sj = Math.min(anchors.length - 1, si + (diff0(S) >= 0 ? 1 : -1));
-          var same = sj >= 0 && anchors[si] && anchors[sj] && anchors[si].s === anchors[sj].s;
-          var vmax = same && !reduce ? 2.4 : MAXV;
-          var diff = targetS() - S, tv = clamp(diff * 1.2, -vmax, vmax);
-          Svel += (tv - Svel) * Math.min(1, dt * 1.8);   // eases in and out, never faster than MAXV anchors/s
-          S += Svel * dt;
-          if (Math.abs(diff) < .002 && Math.abs(Svel) < .002) { S += diff; Svel = 0; }
-        }
+        ySm += (W.scrollY - ySm) * Math.min(1, dt * (reduce ? 20 : 5));
         var from, to, u;
         if (introState.running || introState.k < 1) { from = 0; to = 1; u = introState.k; }
         else { var sm = sample(); from = sm[0]; to = sm[1]; u = sm[2]; }
@@ -388,9 +350,7 @@
           var dz = cam.position.z - m.position.z;
           m.material.opacity = dz > 0 ? Math.min(1, dz / 6) * Math.max(0, 1 - dz / 30) * .9 : 0;
         });
-        BG.uTime.value = time; BG.uMouse2.value.lerp(m2, .04);
-        BG.uTint.value.copy(TINT[from]).lerp(TINT[to], e);
-        if (composer) composer.render(); else { rd.clear(); rd.render(bgScene, bgCam); rd.render(scene, cam); }
+        if (composer) composer.render(); else rd.render(scene, cam);
       }
     };
   }
