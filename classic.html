@@ -1609,339 +1609,72 @@
       requestAnimationFrame(animateCanvas);
     })();
   </script>
-  <!-- S.I SKIN MATCH™: Authentic Clinical Facial Match Modal -->
-  <div id="skin-match-modal" class="sm-modal" role="dialog" aria-modal="true" aria-labelledby="sm-modal-title" hidden>
-    <div class="sm-backdrop" onclick="window.closeSkinMatch()"></div>
-    <div class="sm-dialog">
-      <!-- Header -->
-      <div class="sm-header">
-        <div class="sm-brand-tag">
-          <span class="sm-brand-dot"></span>
-          <h2 class="sm-modal-title mono" id="sm-modal-title">S·I SKIN MATCH™ · התאמה אישית לעור שלך</h2>
-        </div>
-        <button type="button" class="sm-close-btn" aria-label="סגור חלון התאמה אישית"
-          onclick="window.closeSkinMatch()">✕</button>
-      </div>
-
-      <!-- 2-Column Luxury Layout -->
-      <div class="sm-grid">
-        <!-- SIDE A: Visual Clinical Anatomy HUD & Live Telemetry -->
-        <div class="sm-biometrics-col" aria-hidden="true">
-          <div class="sm-hud-header">
-            <span class="mono sm-hud-chip">FACIAL MAP HUD</span>
-            <span class="mono sm-hud-status">LIVE MONITORING</span>
+  <!-- S.I SKIN MATCH™ · treatment-match questionnaire (rendered by skin-match.js) -->
+  <div id="skin-match-modal" class="sm-modal" role="dialog" aria-modal="true" aria-labelledby="sm-title" hidden>
+    <div class="sm-backdrop" data-sm-close></div>
+    <div class="sm-dialog" tabindex="-1">
+      <header class="sm-head">
+        <div class="sm-brand">
+          <svg class="sm-brand-arch" viewBox="0 0 24 32" aria-hidden="true"><path d="M3 31V12a9 9 0 0 1 18 0v19" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M8.5 31V14a3.5 3.5 0 0 1 7 0v17" fill="none" stroke="currentColor" stroke-width="1.1" opacity=".55"/></svg>
+          <div>
+            <p class="sm-brand-en" lang="en" dir="ltr">S·I SKIN MATCH™</p>
+            <h2 class="sm-brand-he" id="sm-title">התאמת טיפול אישית לעור שלך</h2>
           </div>
+        </div>
+        <button type="button" class="sm-x" data-sm-close aria-label="סגירת השאלון">
+          <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 3l10 10M13 3L3 13" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        </button>
+      </header>
 
-          <div class="sm-face-scanner-wrap" id="sm-face-scanner-wrap">
-            <div class="sm-radar-line" id="sm-radar-line"></div>
-            <svg class="sm-face-svg" id="sm-face-svg" viewBox="0 0 280 350" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+      <div class="sm-body">
+        <section class="sm-main">
+          <div class="sm-progress" id="sm-progress">
+            <div class="sm-prog-row">
+              <span class="sm-count" id="sm-count" dir="ltr"><b>01</b> / 04</span>
+              <button type="button" class="sm-back" id="sm-back" hidden><span aria-hidden="true">→</span> חזרה</button>
+            </div>
+            <ol class="sm-seg" aria-hidden="true"><li></li><li></li><li></li><li></li></ol>
+          </div>
+          <div class="sm-stage" id="sm-stage" aria-live="polite"></div>
+        </section>
+
+        <aside class="sm-side" aria-label="הבחירות שלך">
+          <div class="sm-face" aria-hidden="true">
+            <svg viewBox="0 0 200 260" fill="none">
               <defs>
-                <radialGradient id="faceGlow" cx="50%" cy="45%" r="60%">
-                  <stop offset="0%" stop-color="#D9A441" stop-opacity="0.14" />
-                  <stop offset="100%" stop-color="#141312" stop-opacity="0" />
+                <radialGradient id="smGlow" cx="50%" cy="50%" r="50%">
+                  <stop offset="0" stop-color="#D9A441" stop-opacity=".55"/>
+                  <stop offset="1" stop-color="#D9A441" stop-opacity="0"/>
                 </radialGradient>
               </defs>
-
-              <rect width="280" height="350" fill="url(#faceGlow)" />
-
-              <!-- Architectural Grid Lines -->
-              <line x1="20" y1="85" x2="260" y2="85" stroke="rgba(169, 123, 82, 0.14)" stroke-dasharray="3 3" />
-              <line x1="20" y1="175" x2="260" y2="175" stroke="rgba(169, 123, 82, 0.14)" stroke-dasharray="3 3" />
-              <line x1="20" y1="265" x2="260" y2="265" stroke="rgba(169, 123, 82, 0.14)" stroke-dasharray="3 3" />
-              <line x1="140" y1="20" x2="140" y2="330" stroke="rgba(169, 123, 82, 0.18)" stroke-dasharray="4 4" />
-
-              <!-- Male Head Wireframe Contour -->
-              <path class="sm-head-contour"
-                d="M72,95 C68,48 100,28 140,28 C180,28 212,48 208,95 C206,135 210,175 202,225 C196,258 176,290 154,310 C146,316 134,316 126,310 C104,290 84,258 78,225 C70,175 74,135 72,95 Z"
-                stroke="rgba(237, 230, 220, 0.35)" stroke-width="1.75" stroke-dasharray="5 2" />
-
-              <!-- Brow & Forehead Structure -->
-              <path d="M88,105 Q140,96 192,105" stroke="#A97B52" stroke-width="1.5" stroke-linecap="round" />
-              <path d="M94,120 L124,116 M156,116 L186,120" stroke="rgba(237, 230, 220, 0.6)" stroke-width="2"
-                stroke-linecap="round" />
-
-              <!-- Nose Bridge & Structure -->
-              <path d="M140,116 L140,182 L132,190 L148,190" stroke="rgba(217, 164, 65, 0.75)" stroke-width="1.5"
-                stroke-linejoin="round" />
-
-              <!-- Angular Masculine Jawline & Chin -->
-              <path d="M80,215 L96,252 L125,285 L155,285 L184,252 L200,215" stroke="rgba(169, 123, 82, 0.55)"
-                stroke-width="1.5" />
-
-              <!-- Mouth Contours -->
-              <path d="M120,228 Q140,224 160,228" stroke="rgba(237, 230, 220, 0.45)" stroke-width="1.25" />
-              <path d="M126,238 Q140,242 154,238" stroke="rgba(237, 230, 220, 0.35)" stroke-width="1" />
-
-              <!-- Cheeks & Malar Angles -->
-              <path d="M88,168 Q106,176 122,182" stroke="rgba(169, 123, 82, 0.3)" stroke-width="1" />
-              <path d="M192,168 Q174,176 158,182" stroke="rgba(169, 123, 82, 0.3)" stroke-width="1" />
-
-              <!-- Focal Target Points -->
-              <!-- 1. T-Zone (Forehead & Nose) -->
-              <g id="hud-target-tzone" class="sm-hud-point is-focused">
-                <circle cx="140" cy="85" r="5" fill="#D9A441" />
-                <circle cx="140" cy="85" r="14" stroke="#D9A441" stroke-width="1" class="sm-point-ring" />
-                <line x1="140" y1="85" x2="225" y2="70" stroke="#D9A441" stroke-width="1" stroke-dasharray="2 2" />
-                <rect x="225" y="60" width="50" height="18" rx="2" fill="rgba(28,27,26,0.9)" stroke="#D9A441" />
-                <text x="250" y="73" fill="#D9A441" font-size="8.5" font-family="monospace"
-                  text-anchor="middle">T-ZONE</text>
+              <path class="sm-face-arch" d="M18 258V100a82 82 0 0 1 164 0v158"/>
+              <path class="sm-face-arch sm-face-arch-in" d="M30 258V102a70 70 0 0 1 140 0v156"/>
+              <g class="sm-zone" data-zone="tzone"><ellipse cx="100" cy="84" rx="34" ry="16" fill="url(#smGlow)"/><ellipse cx="100" cy="136" rx="11" ry="24" fill="url(#smGlow)"/></g>
+              <g class="sm-zone" data-zone="cheeks"><ellipse cx="70" cy="154" rx="18" ry="15" fill="url(#smGlow)"/><ellipse cx="130" cy="154" rx="18" ry="15" fill="url(#smGlow)"/></g>
+              <g class="sm-zone" data-zone="jawline"><ellipse cx="100" cy="202" rx="44" ry="18" fill="url(#smGlow)"/></g>
+              <g class="sm-face-line">
+                <path d="M100 50c33 0 51 25 51 60 0 40-6 68-23 91-10 14-20 20-28 20s-18-6-28-20c-17-23-23-51-23-91 0-35 18-60 51-60z"/>
+                <path d="M49 116c-9-2-11 17-2 24M151 116c9-2 11 17 2 24"/>
+                <path d="M70 110q12-6 24-2M106 108q12-4 24 2" stroke-width="1.6"/>
+                <path d="M75 123q8-4 16 0M109 123q8-4 16 0" opacity=".8"/>
+                <path d="M100 118l-4 33q4 3 8 0" opacity=".8"/>
+                <path d="M88 177q12 4 24 0" opacity=".8"/>
+                <path d="M82 217l-2 30M118 217l2 30" opacity=".6"/>
               </g>
-
-              <!-- 2. Cheeks / Malar Region -->
-              <g id="hud-target-cheeks" class="sm-hud-point">
-                <circle cx="95" cy="175" r="5" fill="#A97B52" />
-                <circle cx="95" cy="175" r="14" stroke="#A97B52" stroke-width="1" class="sm-point-ring" />
-                <line x1="95" y1="175" x2="28" y2="162" stroke="#A97B52" stroke-width="1" stroke-dasharray="2 2" />
-                <rect x="5" y="152" width="50" height="18" rx="2" fill="rgba(28,27,26,0.9)" stroke="#A97B52" />
-                <text x="30" y="165" fill="#EDE6DC" font-size="8.5" font-family="monospace"
-                  text-anchor="middle">CHEEKS</text>
-              </g>
-
-              <!-- 3. Beard Line / Jaw Area -->
-              <g id="hud-target-beard" class="sm-hud-point">
-                <circle cx="140" cy="270" r="5" fill="#22C55E" />
-                <circle cx="140" cy="270" r="14" stroke="#22C55E" stroke-width="1" class="sm-point-ring" />
-                <line x1="140" y1="270" x2="225" y2="275" stroke="#22C55E" stroke-width="1" stroke-dasharray="2 2" />
-                <rect x="225" y="265" width="52" height="18" rx="2" fill="rgba(28,27,26,0.9)" stroke="#22C55E" />
-                <text x="251" y="278" fill="#22C55E" font-size="8.5" font-family="monospace" text-anchor="middle">BEARD
-                  LINE</text>
+              <g class="sm-dots">
+                <circle data-zone="tzone" cx="100" cy="84" r="3"/>
+                <circle data-zone="cheeks" cx="70" cy="154" r="3"/><circle data-zone="cheeks" cx="130" cy="154" r="3"/>
+                <circle data-zone="jawline" cx="100" cy="204" r="3"/>
               </g>
             </svg>
           </div>
-
-          <!-- Live Clinical Telemetry Readout -->
-          <div class="sm-telemetry-panel">
-            <div class="sm-telemetry-row">
-              <span class="mono">FOCUS REGION</span>
-              <span class="mono sm-t-val" id="sm-val-zone">T-ZONE / FOREHEAD</span>
-            </div>
-            <div class="sm-telemetry-row">
-              <span class="mono">SKIN STATUS</span>
-              <span class="mono sm-t-val" id="sm-val-condition">AWAITING INPUT...</span>
-            </div>
-            <div class="sm-telemetry-row">
-              <span class="mono">DAILY FACTOR</span>
-              <span class="mono sm-t-val" id="sm-val-habit">AWAITING INPUT...</span>
-            </div>
-            <div class="sm-telemetry-row">
-              <span class="mono">CLINICAL GOAL</span>
-              <span class="mono sm-t-val" id="sm-val-goal">AWAITING INPUT...</span>
-            </div>
-            <div class="sm-telemetry-row">
-              <span class="mono">PROTOCOL STATUS</span>
-              <span class="mono sm-t-val" id="sm-val-protocol" style="color:var(--sm-amber);">MATCH ENGINE ACTIVE</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- SIDE B: 4-Step Clinical Questionnaire -->
-        <div class="sm-questionnaire-col">
-          <!-- Step Header & Progress -->
-          <div class="sm-q-header">
-            <div class="sm-step-nav-bar">
-              <div class="sm-step-indicator mono" id="sm-step-counter">שלב 1 מתוך 4</div>
-              <button type="button" class="sm-prev-step-btn" id="sm-prev-step-btn" style="display:none;"
-                onclick="window.smPrevStep()">
-                <span>← חזרה</span>
-              </button>
-            </div>
-            <div class="sm-q-progress-track">
-              <div class="sm-q-progress-bar" id="sm-progress-bar" style="width: 25%;"></div>
-            </div>
-          </div>
-
-          <!-- Questionnaire Screens -->
-          <div class="sm-q-container">
-            <!-- STEP 1: FOCUS ZONE -->
-            <div class="sm-step-screen is-active" id="sm-step-1">
-              <span class="sm-kicker mono">FOCUS AREA · שלב 01 מתוך 04</span>
-              <h3 class="sm-step-title">באילו אזורים בפנים נדרש המיקוד העיקרי?</h3>
-              <p class="sm-step-desc">בחר את אזור הפנים שבו מופיעים האתגרים, חוסר האיזון או הרגישות הבולטים ביותר.</p>
-
-              <div class="sm-options-grid">
-                <button type="button" class="sm-option-card" data-step="1" data-val="tzone"
-                  onclick="window.selectSmOption(1, 'tzone', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>אזור ה-T והמצח</strong>
-                    <span>מצח ואף: נטייה לשומניות מוגברת, ברק, נקבוביות חסומות וקומדונים (שחורים).</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="1" data-val="cheeks"
-                  onclick="window.selectSmOption(1, 'cheeks', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>לחיים ומרכז הפנים</strong>
-                    <span>חספוס, חוסר אחידות בגוון, כתמי שמש/פיגמנטציה, יובש מקומי או עמימות.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="1" data-val="jawline"
-                  onclick="window.selectSmOption(1, 'jawline', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>קו הלסת, הצוואר ואזור הגילוח</strong>
-                    <span>אדמומיות, צריבה ורגישות לאחר גילוח, פצעי גילוח (פוליקוליטיס) וגירוי מתמיד.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="1" data-val="full"
-                  onclick="window.selectSmOption(1, 'full', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>כל הפנים</strong>
-                    <span>התאמה מקיפה וטיפול כולל לאיזון מרקם, ניקוי עמוק והחזרת רעננות טבעית.</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 2: SKIN CONDITION -->
-            <div class="sm-step-screen" id="sm-step-2">
-              <span class="sm-kicker mono">EPIDERMAL STATUS · שלב 02 מתוך 04</span>
-              <h3 class="sm-step-title">כיצד העור מרגיש ומגיב ביומיום?</h3>
-              <p class="sm-step-desc">תאר את התחושה השלטת ואת מצב מרקם העור הנוכחי.</p>
-
-              <div class="sm-options-grid">
-                <button type="button" class="sm-option-card" data-step="2" data-val="oily"
-                  onclick="window.selectSmOption(2, 'oily', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>שומני, מבריק ונקבוביות חסומות</strong>
-                    <span>עודף הפרשת סבום ניכר בשעות הצהריים, נקבוביות פעורות ונטייה לפצעונים.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="2" data-val="dry"
-                  onclick="window.selectSmOption(2, 'dry', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>יבש, מתוח וחסר גמישות</strong>
-                    <span>תחושת מתיחה לאחר מקלחת, חספוס קל במגע וקמטוטי יובש ראשונים.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="2" data-val="redness"
-                  onclick="window.selectSmOption(2, 'redness', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>אדמומיות, צריבה ורגישות לאחר גילוח</strong>
-                    <span>תחושת בערה, עור מגורה, פוליקוליטיס ונטייה לאריתמה מקומית.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="2" data-val="dull"
-                  onclick="window.selectSmOption(2, 'dull', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>גוון עמום, כתמי שמש ועייפות</strong>
-                    <span>מראה עור חסר חיוניות, כתמי פיגמנטציה עקב חשיפה לשמש ומראה עייף.</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 3: ROUTINE & HABITS -->
-            <div class="sm-step-screen" id="sm-step-3">
-              <span class="sm-kicker mono">DAILY FACTORS · שלב 03 מתוך 04</span>
-              <h3 class="sm-step-title">מהם ההרגלים וגורמי החשיפה העיקריים שלך?</h3>
-              <p class="sm-step-desc">הרגלי שגרה וגורמי סביבה המשפיעים ישירות על מחסום העור הגברי.</p>
-
-              <div class="sm-options-grid">
-                <button type="button" class="sm-option-card" data-step="3" data-val="daily_blade"
-                  onclick="window.selectSmOption(3, 'daily_blade', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>גילוח יומיומי בסכין</strong>
-                    <span>חיכוך מכני קבוע ופגיעה חוזרת בשכבת הקרנית הדורשים הגנה ושיקום.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="3" data-val="electric_beard"
-                  onclick="window.selectSmOption(3, 'electric_beard', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>מכונה או זקן מעוצב</strong>
-                    <span>עיצוב קווי מתאר קבועים לצד רגישות ונטייה לקראטוזיס בזקיקי השערה.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="3" data-val="sweat_sport"
-                  onclick="window.selectSmOption(3, 'sweat_sport', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>אימונים אינטנסיביים והזעה</strong>
-                    <span>הזעה מוגברת, הצטברות מלחים בנקבוביות וחיכוך במהלך אימוני כושר.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="3" data-val="sun_outdoor"
-                  onclick="window.selectSmOption(3, 'sun_outdoor', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>חשיפה מרובה לשמש</strong>
-                    <span>שהייה ממושכת בחוץ המובילה לעומס חמצוני, קרינת UV והאצת הזדקנות העור.</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 4: CLINICAL GOAL -->
-            <div class="sm-step-screen" id="sm-step-4">
-              <span class="sm-kicker mono">TREATMENT TARGET · שלב 04 מתוך 04</span>
-              <h3 class="sm-step-title">מהי המטרה הטיפולית הרצויה בקליניקה?</h3>
-              <p class="sm-step-desc">התוצאה שאתה שואף להשיג בחדר הטיפולים הפרטי.</p>
-
-              <div class="sm-options-grid">
-                <button type="button" class="sm-option-card" data-step="4" data-val="deep_clean"
-                  onclick="window.selectSmOption(4, 'deep_clean', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>ניקוי עמוק ואיזון שומן</strong>
-                    <span>ריקון קומדונים יסודי, המסת חסימות שומניות ופוטותרפיה כחולה לאיזון נקבוביות.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="4" data-val="glow_texture"
-                  onclick="window.selectSmOption(4, 'glow_texture', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>חידוש מרקם, זוהר ורענון GLOW</strong>
-                    <span>הסרת שכבת תאים עמומה, החדרת לחות היאלורונית והחזרת מראה חיוני ורענן.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="4" data-val="barrier_repair"
-                  onclick="window.selectSmOption(4, 'barrier_repair', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>שיקום מחסום העור והרגעת גירוי</strong>
-                    <span>שחזור מעטפת ההגנה, הרגעת אדמומיות וצריבה, ומניעת פצעי גילוח עתידיים.</span>
-                  </div>
-                </button>
-
-                <button type="button" class="sm-option-card" data-step="4" data-val="event_prep"
-                  onclick="window.selectSmOption(4, 'event_prep', this)">
-                  <div class="sm-option-radio"></div>
-                  <div class="sm-option-body">
-                    <strong>רענון ממוקד לפני אירוע</strong>
-                    <span>טיפול אקספרס GLOW ממוקד, ללא זמן החלמה וללא אדמומיות — מוכן באותו היום.</span>
-                  </div>
-                </button>
-              </div>
-            </div>
-
-            <!-- STEP 5: SKIN MATCH RESULT (TREATMENTS ONLY) -->
-            <div class="sm-step-screen" id="sm-step-result">
-              <!-- Rendered dynamically by skin-match.js -->
-            </div>
-          </div>
-        </div>
+          <ol class="sm-profile" id="sm-profile"></ol>
+          <p class="sm-side-note">השאלון רץ בדפדפן שלך בלבד. התשובות לא נשלחות ולא נשמרות.</p>
+        </aside>
       </div>
     </div>
   </div>
+
 <footer class="si-legal" style="max-width:1100px;margin:0 auto;padding:22px 20px 90px;display:flex;flex-wrap:wrap;gap:8px 18px;justify-content:center;font:400 13px/1.6 Assistant,system-ui,sans-serif;direction:rtl"><a href="/accessibility/" style="color:inherit">הצהרת נגישות</a><a href="/privacy/" style="color:inherit">מדיניות פרטיות</a><a href="/terms/" style="color:inherit">תנאי שימוש</a><a href="#" data-open-consent style="color:inherit">הגדרות עוגיות</a></footer>
 <script src="/assets/site.js"></script>
 </body>
