@@ -154,7 +154,7 @@
     var leg = sy - by, arc = Math.PI * a, L = 2 * leg + arc, d = t * L;
     if (d < leg) return [-a, by + d];
     d -= leg; if (d < arc) { var th = Math.PI - d / a; return [Math.cos(th) * a, sy + Math.sin(th) * a]; }
-    d -= arc; return [a, sy + leg - d];
+    d -= arc; return [a, sy - d];
   }
 
   function buildWorld() {
@@ -348,7 +348,7 @@
         // tunnel arches only show while the camera is still out in the corridor
         arches.forEach(function (m) {
           var dz = cam.position.z - m.position.z;
-          m.material.opacity = dz > 0 ? Math.min(1, dz / 6) * Math.max(0, 1 - dz / 30) * .9 : 0;
+          m.material.opacity = (dz > 0 && (introState.running || introState.k < 1)) ? Math.min(1, dz / 6) * Math.max(0, 1 - dz / 30) * .9 : 0;
         });
         if (composer) composer.render(); else rd.render(scene, cam);
       }

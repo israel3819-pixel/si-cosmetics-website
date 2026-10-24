@@ -92,8 +92,8 @@ html.x-nogl body{background:radial-gradient(60% 40% at 30% 20%,rgba(169,123,82,.
 .x-nav a.is-current::after{content:"";position:absolute;inset:auto 0 0;height:1px;background:var(--x-bronze)}
 .x-top-actions{display:flex;gap:10px;align-items:center}
 .x-menu{display:none;width:44px;height:44px;border:1px solid var(--x-line);background:transparent;color:var(--x-sand);cursor:pointer;font-size:18px}
-.x-skip{position:fixed;top:-100px;right:16px;z-index:300;background:var(--x-sand);color:var(--x-ink);padding:10px 16px;border-radius:999px}
-.x-skip:focus{top:calc(12px + env(safe-area-inset-top,0px))}
+.x-skiplink{position:fixed;top:-100px;right:16px;z-index:300;background:var(--x-sand);color:var(--x-ink);padding:10px 16px;border-radius:999px;font-size:14px}
+.x-skiplink:focus{top:calc(12px + env(safe-area-inset-top,0px))}
 .x-progress{position:fixed;top:env(safe-area-inset-top,0px);right:0;height:2px;width:100%;transform-origin:right;transform:scaleX(0);background:linear-gradient(to left,var(--x-bronze),var(--x-amber));z-index:101}
 
 /* ---------- buttons ---------- */
@@ -345,7 +345,7 @@ body:not(.ready) .x-wa{opacity:0;transform:translateY(10px)}
   </div>
 </header>
 
-<a class="x-skip" href="#main">דילוג לתוכן</a>
+<a class="x-skiplink" href="#main">דילוג לתוכן</a>
 <main id="main">
   <!-- HERO -->
   <section class="x-hero x-wrap" id="top" data-shape="hero">
