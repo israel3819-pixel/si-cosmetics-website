@@ -636,9 +636,12 @@ function drawOverlay(key, it){
 }
 
 /* ---------------- wiring ---------------- */
-// Artifact build: the claude.ai viewer frame refuses getUserMedia, so the camera button opens the device's own
-// camera through a file input. The still photo then goes through the same quality gate as any upload.
-$("bCam").addEventListener("click", () => $("fileCam").click());
+// Live camera with auto-capture. Where the browser has no getUserMedia, fall back to the device's own camera app
+// through a file input; the still photo then goes through the same quality gate as any upload.
+$("bCam").addEventListener("click", () => {
+  if (navigator.mediaDevices && navigator.mediaDevices.getUserMedia && window.isSecureContext) startCam();
+  else $("fileCam").click();
+});
 $("bUp").addEventListener("click", () => $("file").click());
 $("bCamX").addEventListener("click", () => { stopCam(); resetAll(); status = "idle"; show("L-intro"); });
 $("bNew").addEventListener("click", () => { stopCam(); resetAll(); status = "idle"; show("L-intro"); });

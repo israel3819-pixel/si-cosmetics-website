@@ -94,3 +94,13 @@ h1 span{color:var(--x-bronze);font-family:var(--x-tech);font-weight:700;letter-s
 
 .x-legal{display:flex;flex-wrap:wrap;gap:6px 18px;font-family:var(--f-body);letter-spacing:.02em;font-size:13px}
 .x-legal a{color:var(--x-dim);text-decoration:underline;text-underline-offset:3px}
+
+/* fit: tag line wraps on phones; intro heading clear of the arch curve */
+.tag{max-width:100%;white-space:normal;text-align:center;line-height:1.7}
+@media (max-width:520px){.tag{font-size:10px;letter-spacing:.08em;padding:4px 12px}}
+.intro h2{text-align:center}
+.intro .tips,.intro .note{width:100%}
+/* camera overlays inside the arch: checks sit at the square bottom, close button at the apex */
+.stage .checks{top:auto;bottom:58px;inset-inline:14px}
+.stage .msg{bottom:18px}
+.stage #bCamX{top:14px;inset-inline-end:auto;left:50%;transform:translateX(-50%)}
