@@ -1,0 +1,1397 @@
+[
+  {
+    "path": "/",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/",
+    "redirects": [],
+    "bytes": 56701,
+    "title": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": null,
+        "property": "og:locale",
+        "content": "he_IL"
+      },
+      {
+        "name": null,
+        "property": "og:url",
+        "content": "https://si-cosmetics.co.il/"
+      },
+      {
+        "name": null,
+        "property": "og:title",
+        "content": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב"
+      },
+      {
+        "name": null,
+        "property": "og:description",
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:image",
+        "content": "https://si-cosmetics.co.il/og.jpg"
+      },
+      {
+        "name": null,
+        "property": "og:image:width",
+        "content": "1200"
+      },
+      {
+        "name": null,
+        "property": "og:image:height",
+        "content": "630"
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "לייזר וטיפוח לגברים בפלורנטין."
+      ],
+      [
+        "h3",
+        "הסרת שיער בלייזר במכשיר Louis Luxury"
+      ],
+      [
+        "h3",
+        "טיפול פנים בהתאמה אישית"
+      ],
+      [
+        "h3",
+        "שיזוף מקצועי בהתזה"
+      ],
+      [
+        "h2",
+        "בחדר זה רק אתה."
+      ],
+      [
+        "h3",
+        "חדר סגור, 1-על-1"
+      ],
+      [
+        "h3",
+        "כניסה דיסקרטית"
+      ],
+      [
+        "h3",
+        "חניון ללא עלות בצמוד לבניין"
+      ],
+      [
+        "h3",
+        "נקי ומדויק"
+      ],
+      [
+        "h2",
+        "מה מתאים לך עכשיו?"
+      ],
+      [
+        "h3",
+        "מתלבט איזה טיפול הכי נכון לעור שלך?"
+      ],
+      [
+        "h2",
+        "בדיקת שילובי רכיבים."
+      ],
+      [
+        "h2",
+        "מהקליניקה."
+      ],
+      [
+        "h2",
+        "קצת עליי:"
+      ],
+      [
+        "h3",
+        "המקצוע מאחורי הגישה."
+      ],
+      [
+        "h2",
+        "החוויה, במילים שלהם."
+      ],
+      [
+        "h2",
+        "תשובות לשאלות נפוצות."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ],
+      [
+        "h2",
+        "התאמת טיפול אישית לעור שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "S.I COSMETICS",
+        "url": "https://si-cosmetics.co.il/",
+        "telephone": "+972559958106",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "הרצל 158",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
+        "image": "https://si-cosmetics.co.il/og.jpg"
+      }
+    ],
+    "links": [
+      "#main",
+      "#top",
+      "#privacy",
+      "#treatments",
+      "#checker-wrap",
+      "#proof",
+      "#about",
+      "#reviews",
+      "#faq",
+      "#contact",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "/services/laser",
+      "/services/skin",
+      "/services/tan",
+      "https://wa.me/972559958106?text=חבר",
+      "https://www.google.com/maps?cid=4319395640737060174&hl=iw",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לתאם%20מפגש%20טיפול%20בקליניקה",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D",
+      "https://maps.app.goo.gl/utrLEPRHfxENTiTX7",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/services/skin",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/services/skin",
+    "redirects": [],
+    "bytes": 1129610,
+    "title": "SKIN | S.I COSMETICS",
+    "meta": [],
+    "canonical": [],
+    "headings": [
+      [
+        "h1",
+        "קודם מכירים. אחר כך מטפלים."
+      ],
+      [
+        "h2",
+        "מתחילים במה שחשוב לך."
+      ],
+      [
+        "h3",
+        "ניקוי עמוק וטיפולי פנים"
+      ],
+      [
+        "h3",
+        "Glow / Phototherapy"
+      ],
+      [
+        "h3",
+        "אקנה, פיגמנטציה ו־Microneedling"
+      ],
+      [
+        "h2",
+        "מכאן ממשיכים יחד."
+      ],
+      [
+        "h3",
+        "שולחים הודעה"
+      ],
+      [
+        "h3",
+        "בודקים התאמה"
+      ],
+      [
+        "h3",
+        "קובעים ומקבלים הנחיות"
+      ],
+      [
+        "h2",
+        "לפני שקובעים."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "../index.html#treatments",
+      "laser.html",
+      "skin.html",
+      "tan.html",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20SKIN",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%96%D7%9E%D7%9F%20%D7%91-S.I%20Cosmetics",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/services/laser",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/services/laser",
+    "redirects": [],
+    "bytes": 1127681,
+    "title": "LASER | S.I COSMETICS",
+    "meta": [],
+    "canonical": [],
+    "headings": [
+      [
+        "h1",
+        "הקו שלך. הבחירה שלך."
+      ],
+      [
+        "h2",
+        "מתחילים במה שחשוב לך."
+      ],
+      [
+        "h3",
+        "קו הזקן"
+      ],
+      [
+        "h3",
+        "הצוואר ועצמות הלחיים"
+      ],
+      [
+        "h3",
+        "הגוף"
+      ],
+      [
+        "h2",
+        "מכאן ממשיכים יחד."
+      ],
+      [
+        "h3",
+        "שולחים הודעה"
+      ],
+      [
+        "h3",
+        "בודקים התאמה"
+      ],
+      [
+        "h3",
+        "קובעים ומקבלים הנחיות"
+      ],
+      [
+        "h2",
+        "לפני שקובעים."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "../index.html#treatments",
+      "laser.html",
+      "skin.html",
+      "tan.html",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20LASER",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%96%D7%9E%D7%9F%20%D7%91-S.I%20Cosmetics",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/services/tan",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/services/tan",
+    "redirects": [],
+    "bytes": 1126855,
+    "title": "TAN | S.I COSMETICS",
+    "meta": [],
+    "canonical": [],
+    "headings": [
+      [
+        "h1",
+        "הלוק סגור. נשאר הגוון."
+      ],
+      [
+        "h2",
+        "מתחילים במה שחשוב לך."
+      ],
+      [
+        "h3",
+        "הגוון"
+      ],
+      [
+        "h3",
+        "התזמון"
+      ],
+      [
+        "h3",
+        "ההכנה"
+      ],
+      [
+        "h2",
+        "מכאן ממשיכים יחד."
+      ],
+      [
+        "h3",
+        "שולחים הודעה"
+      ],
+      [
+        "h3",
+        "בודקים התאמה"
+      ],
+      [
+        "h3",
+        "קובעים ומקבלים הנחיות"
+      ],
+      [
+        "h2",
+        "לפני שקובעים."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "../index.html#treatments",
+      "laser.html",
+      "skin.html",
+      "tan.html",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D%20%D7%A2%D7%9C%20TAN",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99%2C%20%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%96%D7%9E%D7%9F%20%D7%91-S.I%20Cosmetics",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/privacy/",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/privacy/",
+    "redirects": [],
+    "bytes": 6160,
+    "title": "מדיניות פרטיות | S.I COSMETICS",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "איזה מידע נאסף באתר S.I COSMETICS, למה, ומה הזכויות שלך. באתר אין עוגיות פרסום או מעקב."
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/privacy/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "מדיניות פרטיות"
+      ],
+      [
+        "h2",
+        "בקצרה"
+      ],
+      [
+        "h2",
+        "מי אחראי על המידע"
+      ],
+      [
+        "h2",
+        "איזה מידע נאסף ולמה"
+      ],
+      [
+        "h2",
+        "עוגיות ואחסון בדפדפן"
+      ],
+      [
+        "h2",
+        "קישורים לשירותים אחרים"
+      ],
+      [
+        "h2",
+        "שמירה ואבטחה"
+      ],
+      [
+        "h2",
+        "הזכויות שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "#main",
+      "/",
+      "/",
+      "https://wa.me/972559958106",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/terms/",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/terms/",
+    "redirects": [],
+    "bytes": 5428,
+    "title": "תנאי שימוש | S.I COSMETICS",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "תנאי השימוש באתר S.I COSMETICS: מידע כללי, כלים אינטראקטיביים, קניין רוחני ודין חל."
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/terms/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "תנאי שימוש"
+      ],
+      [
+        "h2",
+        "מה יש באתר"
+      ],
+      [
+        "h2",
+        "מידע כללי, לא ייעוץ רפואי"
+      ],
+      [
+        "h2",
+        "תיאום טיפולים"
+      ],
+      [
+        "h2",
+        "קניין רוחני"
+      ],
+      [
+        "h2",
+        "אחריות"
+      ],
+      [
+        "h2",
+        "קישורים חיצוניים"
+      ],
+      [
+        "h2",
+        "פרטיות ונגישות"
+      ],
+      [
+        "h2",
+        "דין וסמכות שיפוט"
+      ],
+      [
+        "h2",
+        "שינויים ויצירת קשר"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "#main",
+      "/",
+      "/",
+      "/privacy/",
+      "/accessibility/",
+      "https://wa.me/972559958106",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/accessibility/",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/accessibility/",
+    "redirects": [],
+    "bytes": 5590,
+    "title": "הצהרת נגישות | S.I COSMETICS",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "הצהרת הנגישות של אתר S.I COSMETICS: מה הותאם, מה עדיין בתהליך, ואיך פונים לרכז הנגישות."
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/accessibility/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "הצהרת נגישות"
+      ],
+      [
+        "h2",
+        "רמת הנגישות"
+      ],
+      [
+        "h2",
+        "מה הותאם באתר"
+      ],
+      [
+        "h2",
+        "חלקים שעדיין אינם נגישים במלואם"
+      ],
+      [
+        "h2",
+        "נגישות הקליניקה"
+      ],
+      [
+        "h2",
+        "נתקלת בבעיה? דבר איתנו"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "#main",
+      "/",
+      "/",
+      "https://wa.me/972559958106",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/classic",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/classic",
+    "redirects": [],
+    "bytes": 61754,
+    "title": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב",
+    "meta": [
+      {
+        "name": "robots",
+        "property": null,
+        "content": "noindex"
+      },
+      {
+        "name": "description",
+        "property": null,
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:title",
+        "content": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב"
+      },
+      {
+        "name": null,
+        "property": "og:description",
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:image",
+        "content": "https://si-cosmetics-tlv.netlify.app/assets/hero-arch.webp"
+      },
+      {
+        "name": null,
+        "property": "og:url",
+        "content": "https://si-cosmetics-tlv.netlify.app/"
+      },
+      {
+        "name": null,
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": null,
+        "property": "og:locale",
+        "content": "he_IL"
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/classic"
+    ],
+    "headings": [
+      [
+        "h1",
+        "לייזר וטיפוח לגברים בפלורנטין."
+      ],
+      [
+        "h2",
+        "בחדר זה רק אתה."
+      ],
+      [
+        "h3",
+        "חדר סגור, 1-על-1"
+      ],
+      [
+        "h3",
+        "כניסה דיסקרטית"
+      ],
+      [
+        "h3",
+        "חניון ללא עלות בצמוד לבניין"
+      ],
+      [
+        "h3",
+        "נקי ומדויק"
+      ],
+      [
+        "h2",
+        "מה מתאים לך עכשיו?"
+      ],
+      [
+        "h3",
+        "מתלבט איזה טיפול הכי נכון לעור שלך?"
+      ],
+      [
+        "h3",
+        "הסרת שיער בלייזר במכשיר Louis Luxury"
+      ],
+      [
+        "h3",
+        "טיפול פנים בהתאמה אישית"
+      ],
+      [
+        "h3",
+        "שיזוף מקצועי בהתזה"
+      ],
+      [
+        "h2",
+        "בדיקת שילובי רכיבים."
+      ],
+      [
+        "h2",
+        "מהקליניקה."
+      ],
+      [
+        "h2",
+        "קצת עליי:"
+      ],
+      [
+        "h3",
+        "המקצוע מאחורי הגישה."
+      ],
+      [
+        "h2",
+        "החוויה, במילים שלהם."
+      ],
+      [
+        "h2",
+        "תשובות לשאלות נפוצות."
+      ],
+      [
+        "h2",
+        "מקצועי. פרטי. לגברים."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ],
+      [
+        "h2",
+        "התאמת טיפול אישית לעור שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [
+      "#main",
+      "#top",
+      "#privacy",
+      "#treatments",
+      "#checker",
+      "#proof",
+      "#about",
+      "#reviews",
+      "#faq",
+      "#contact",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "services/laser.html",
+      "services/skin.html",
+      "services/tan.html",
+      "services/laser.html",
+      "services/laser.html",
+      "services/skin.html",
+      "services/skin.html",
+      "services/tan.html",
+      "services/tan.html",
+      "https://wa.me/972559958106?text=חבר",
+      "https://www.google.com/maps?cid=4319395640737060174&hl=iw",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D",
+      "https://maps.app.goo.gl/utrLEPRHfxENTiTX7",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לתאם%20מפגש%20טיפול%20בקליניקה",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/robots.txt",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/robots.txt",
+    "redirects": [],
+    "bytes": 90,
+    "title": null,
+    "meta": [],
+    "canonical": [],
+    "headings": [],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [],
+    "x_robots": null
+  },
+  {
+    "path": "/sitemap.xml",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/sitemap.xml",
+    "redirects": [],
+    "bytes": 930,
+    "title": null,
+    "meta": [],
+    "canonical": [],
+    "headings": [],
+    "images_missing_alt": 0,
+    "jsonld": [],
+    "links": [],
+    "x_robots": null
+  },
+  {
+    "path": "/seo-audit-missing-20261031",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/seo-audit-missing-20261031",
+    "redirects": [],
+    "bytes": 56701,
+    "title": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": null,
+        "property": "og:locale",
+        "content": "he_IL"
+      },
+      {
+        "name": null,
+        "property": "og:url",
+        "content": "https://si-cosmetics.co.il/"
+      },
+      {
+        "name": null,
+        "property": "og:title",
+        "content": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב"
+      },
+      {
+        "name": null,
+        "property": "og:description",
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:image",
+        "content": "https://si-cosmetics.co.il/og.jpg"
+      },
+      {
+        "name": null,
+        "property": "og:image:width",
+        "content": "1200"
+      },
+      {
+        "name": null,
+        "property": "og:image:height",
+        "content": "630"
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "לייזר וטיפוח לגברים בפלורנטין."
+      ],
+      [
+        "h3",
+        "הסרת שיער בלייזר במכשיר Louis Luxury"
+      ],
+      [
+        "h3",
+        "טיפול פנים בהתאמה אישית"
+      ],
+      [
+        "h3",
+        "שיזוף מקצועי בהתזה"
+      ],
+      [
+        "h2",
+        "בחדר זה רק אתה."
+      ],
+      [
+        "h3",
+        "חדר סגור, 1-על-1"
+      ],
+      [
+        "h3",
+        "כניסה דיסקרטית"
+      ],
+      [
+        "h3",
+        "חניון ללא עלות בצמוד לבניין"
+      ],
+      [
+        "h3",
+        "נקי ומדויק"
+      ],
+      [
+        "h2",
+        "מה מתאים לך עכשיו?"
+      ],
+      [
+        "h3",
+        "מתלבט איזה טיפול הכי נכון לעור שלך?"
+      ],
+      [
+        "h2",
+        "בדיקת שילובי רכיבים."
+      ],
+      [
+        "h2",
+        "מהקליניקה."
+      ],
+      [
+        "h2",
+        "קצת עליי:"
+      ],
+      [
+        "h3",
+        "המקצוע מאחורי הגישה."
+      ],
+      [
+        "h2",
+        "החוויה, במילים שלהם."
+      ],
+      [
+        "h2",
+        "תשובות לשאלות נפוצות."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ],
+      [
+        "h2",
+        "התאמת טיפול אישית לעור שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "S.I COSMETICS",
+        "url": "https://si-cosmetics.co.il/",
+        "telephone": "+972559958106",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "הרצל 158",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
+        "image": "https://si-cosmetics.co.il/og.jpg"
+      }
+    ],
+    "links": [
+      "#main",
+      "#top",
+      "#privacy",
+      "#treatments",
+      "#checker-wrap",
+      "#proof",
+      "#about",
+      "#reviews",
+      "#faq",
+      "#contact",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "/services/laser",
+      "/services/skin",
+      "/services/tan",
+      "https://wa.me/972559958106?text=חבר",
+      "https://www.google.com/maps?cid=4319395640737060174&hl=iw",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לתאם%20מפגש%20טיפול%20בקליניקה",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D",
+      "https://maps.app.goo.gl/utrLEPRHfxENTiTX7",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/index.html",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/",
+    "redirects": [
+      308
+    ],
+    "bytes": 56701,
+    "title": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": null,
+        "property": "og:locale",
+        "content": "he_IL"
+      },
+      {
+        "name": null,
+        "property": "og:url",
+        "content": "https://si-cosmetics.co.il/"
+      },
+      {
+        "name": null,
+        "property": "og:title",
+        "content": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב"
+      },
+      {
+        "name": null,
+        "property": "og:description",
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:image",
+        "content": "https://si-cosmetics.co.il/og.jpg"
+      },
+      {
+        "name": null,
+        "property": "og:image:width",
+        "content": "1200"
+      },
+      {
+        "name": null,
+        "property": "og:image:height",
+        "content": "630"
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "לייזר וטיפוח לגברים בפלורנטין."
+      ],
+      [
+        "h3",
+        "הסרת שיער בלייזר במכשיר Louis Luxury"
+      ],
+      [
+        "h3",
+        "טיפול פנים בהתאמה אישית"
+      ],
+      [
+        "h3",
+        "שיזוף מקצועי בהתזה"
+      ],
+      [
+        "h2",
+        "בחדר זה רק אתה."
+      ],
+      [
+        "h3",
+        "חדר סגור, 1-על-1"
+      ],
+      [
+        "h3",
+        "כניסה דיסקרטית"
+      ],
+      [
+        "h3",
+        "חניון ללא עלות בצמוד לבניין"
+      ],
+      [
+        "h3",
+        "נקי ומדויק"
+      ],
+      [
+        "h2",
+        "מה מתאים לך עכשיו?"
+      ],
+      [
+        "h3",
+        "מתלבט איזה טיפול הכי נכון לעור שלך?"
+      ],
+      [
+        "h2",
+        "בדיקת שילובי רכיבים."
+      ],
+      [
+        "h2",
+        "מהקליניקה."
+      ],
+      [
+        "h2",
+        "קצת עליי:"
+      ],
+      [
+        "h3",
+        "המקצוע מאחורי הגישה."
+      ],
+      [
+        "h2",
+        "החוויה, במילים שלהם."
+      ],
+      [
+        "h2",
+        "תשובות לשאלות נפוצות."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ],
+      [
+        "h2",
+        "התאמת טיפול אישית לעור שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "S.I COSMETICS",
+        "url": "https://si-cosmetics.co.il/",
+        "telephone": "+972559958106",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "הרצל 158",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
+        "image": "https://si-cosmetics.co.il/og.jpg"
+      }
+    ],
+    "links": [
+      "#main",
+      "#top",
+      "#privacy",
+      "#treatments",
+      "#checker-wrap",
+      "#proof",
+      "#about",
+      "#reviews",
+      "#faq",
+      "#contact",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "/services/laser",
+      "/services/skin",
+      "/services/tan",
+      "https://wa.me/972559958106?text=חבר",
+      "https://www.google.com/maps?cid=4319395640737060174&hl=iw",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לתאם%20מפגש%20טיפול%20בקליניקה",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D",
+      "https://maps.app.goo.gl/utrLEPRHfxENTiTX7",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C"
+    ],
+    "x_robots": null
+  },
+  {
+    "path": "/skin-map",
+    "status": 200,
+    "final": "https://si-cosmetics.co.il/",
+    "redirects": [
+      301
+    ],
+    "bytes": 56701,
+    "title": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב",
+    "meta": [
+      {
+        "name": "description",
+        "property": null,
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:type",
+        "content": "website"
+      },
+      {
+        "name": null,
+        "property": "og:locale",
+        "content": "he_IL"
+      },
+      {
+        "name": null,
+        "property": "og:url",
+        "content": "https://si-cosmetics.co.il/"
+      },
+      {
+        "name": null,
+        "property": "og:title",
+        "content": "S.I COSMETICS — לייזר, שיזוף וטיפולי עור לגברים | פלורנטין, תל אביב"
+      },
+      {
+        "name": null,
+        "property": "og:description",
+        "content": "קליניקה לאסתטיקה וטיפוח לגברים בפלורנטין. לייזר לפי אזורים כולל אינטימי, שיזוף אחיד וטיפולי פנים במכשור מתקדם. חדר סגור, אחד על אחד. הרצל 158."
+      },
+      {
+        "name": null,
+        "property": "og:image",
+        "content": "https://si-cosmetics.co.il/og.jpg"
+      },
+      {
+        "name": null,
+        "property": "og:image:width",
+        "content": "1200"
+      },
+      {
+        "name": null,
+        "property": "og:image:height",
+        "content": "630"
+      }
+    ],
+    "canonical": [
+      "https://si-cosmetics.co.il/"
+    ],
+    "headings": [
+      [
+        "h1",
+        "לייזר וטיפוח לגברים בפלורנטין."
+      ],
+      [
+        "h3",
+        "הסרת שיער בלייזר במכשיר Louis Luxury"
+      ],
+      [
+        "h3",
+        "טיפול פנים בהתאמה אישית"
+      ],
+      [
+        "h3",
+        "שיזוף מקצועי בהתזה"
+      ],
+      [
+        "h2",
+        "בחדר זה רק אתה."
+      ],
+      [
+        "h3",
+        "חדר סגור, 1-על-1"
+      ],
+      [
+        "h3",
+        "כניסה דיסקרטית"
+      ],
+      [
+        "h3",
+        "חניון ללא עלות בצמוד לבניין"
+      ],
+      [
+        "h3",
+        "נקי ומדויק"
+      ],
+      [
+        "h2",
+        "מה מתאים לך עכשיו?"
+      ],
+      [
+        "h3",
+        "מתלבט איזה טיפול הכי נכון לעור שלך?"
+      ],
+      [
+        "h2",
+        "בדיקת שילובי רכיבים."
+      ],
+      [
+        "h2",
+        "מהקליניקה."
+      ],
+      [
+        "h2",
+        "קצת עליי:"
+      ],
+      [
+        "h3",
+        "המקצוע מאחורי הגישה."
+      ],
+      [
+        "h2",
+        "החוויה, במילים שלהם."
+      ],
+      [
+        "h2",
+        "תשובות לשאלות נפוצות."
+      ],
+      [
+        "h2",
+        "נתחיל בהודעה."
+      ],
+      [
+        "h2",
+        "התאמת טיפול אישית לעור שלך"
+      ]
+    ],
+    "images_missing_alt": 0,
+    "jsonld": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BeautySalon",
+        "name": "S.I COSMETICS",
+        "url": "https://si-cosmetics.co.il/",
+        "telephone": "+972559958106",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "הרצל 158",
+          "addressLocality": "תל אביב",
+          "addressCountry": "IL"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": [
+              "Sunday",
+              "Monday",
+              "Tuesday",
+              "Wednesday",
+              "Thursday"
+            ],
+            "opens": "10:00",
+            "closes": "19:00"
+          }
+        ],
+        "image": "https://si-cosmetics.co.il/og.jpg"
+      }
+    ],
+    "links": [
+      "#main",
+      "#top",
+      "#privacy",
+      "#treatments",
+      "#checker-wrap",
+      "#proof",
+      "#about",
+      "#reviews",
+      "#faq",
+      "#contact",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לקבוע%20מפגש%20טיפול",
+      "/services/laser",
+      "/services/skin",
+      "/services/tan",
+      "https://wa.me/972559958106?text=חבר",
+      "https://www.google.com/maps?cid=4319395640737060174&hl=iw",
+      "https://wa.me/972559958106?text=היי,%20אשמח%20לתאם%20מפגש%20טיפול%20בקליניקה",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%A4%D7%A8%D7%98%D7%99%D7%9D",
+      "https://maps.app.goo.gl/utrLEPRHfxENTiTX7",
+      "/accessibility/",
+      "/privacy/",
+      "/terms/",
+      "#",
+      "https://wa.me/972559958106?text=%D7%94%D7%99%D7%99,%20%D7%94%D7%92%D7%A2%D7%AA%D7%99%20%D7%9E%D7%94%D7%90%D7%AA%D7%A8%20%D7%95%D7%90%D7%A9%D7%9E%D7%97%20%D7%9C%D7%AA%D7%90%D7%9D%20%D7%98%D7%99%D7%A4%D7%95%D7%9C"
+    ],
+    "x_robots": null
+  }
+]
