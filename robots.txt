@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /classic
-Sitemap: https://si-cosmetics.co.il/sitemap.xml
+# Preview is excluded with X-Robots-Tag and HTML noindex.
